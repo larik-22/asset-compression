@@ -1,0 +1,8 @@
+---
+alwaysApply: true
+---
+
+- Do not produce dummy placeholder code, make sure everything is production ready
+- This script is intended to process webflow cms items and minify image sizes.
+- Consult the webflow mcp server for the latest data.
+- Before ending response test code by running `npm run dev`
