@@ -1,5 +1,5 @@
 import { getEnvCollectionItems } from './services/webflowClient.js';
-import { compressImage } from './utils/image.js';
+import { compressImageSmart } from './utils/image.js';
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { config } from 'dotenv';
@@ -9,7 +9,13 @@ import { withRateLimitRetry } from './utils/retry.js';
 async function main(): Promise<void> {
     // compress image from public/test_prod.avif 
     const image = await fs.readFile(path.join(process.cwd(), 'public', 'test_prod.avif'));
-    const compressedImage = await compressImage(image);
+    const compressedImage = await compressImageSmart(image, {
+      targetRatio: 0.5,
+      quality: 60,
+      minQuality: 25,
+      minSSIM: 0.97,
+      maxDimension: 500,
+    });
     await fs.writeFile(path.join(process.cwd(), 'public', 'test_prod_compressed.avif'), compressedImage);
 
     // compare the size of the compressed image to the original image in KB
