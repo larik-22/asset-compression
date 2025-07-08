@@ -40,6 +40,10 @@ const stats: ProcessingStats = {
   totalCompressedSize: 0,
 };
 
+/**
+ * Fetches all live items from the Webflow CMS collection using pagination.
+ * @returns {Promise<any[]>} Array of all CMS items.
+ */
 async function fetchAllLiveItems() {
   const all: any[] = [];
   let offset = 0;
@@ -66,6 +70,14 @@ async function fetchAllLiveItems() {
   return all;
 }
 
+/**
+ * Processes a single image field for a CMS item: downloads, compresses, uploads, and updates the CMS item.
+ * @param item - The CMS item object.
+ * @param imageFieldName - The name of the image field to process.
+ * @param collectionId - The Webflow collection ID.
+ * @param imageUrl - The URL of the image to process.
+ * @returns {Promise<boolean>} True if successful, false otherwise.
+ */
 async function processImageField(
   item: any,
   imageFieldName: string,
@@ -134,7 +146,40 @@ async function processImageField(
   }
 }
 
-async function processItem(item: any, collectionId: string): Promise<void> {
+/**
+ * Filters items that have a non-empty, non-null image field.
+ * @param items - Array of CMS items.
+ * @param imageFieldName - The name of the image field to check.
+ * @returns {any[]} Filtered array of items with images.
+ */
+function filterItemsWithImages(items: any[], imageFieldName: string): any[] {
+  return items.filter(item => {
+    const field = item.fieldData?.[imageFieldName];
+    return field !== undefined && field !== '' && field !== null;
+  });
+}
+
+/**
+ * Extracts the image URL from a field value, supporting both string and object with url property.
+ * @param field - The image field value (string or object).
+ * @returns {string | null} The image URL, or null if not found.
+ */
+function getImageUrlFromField(field: any): string | null {
+  if (typeof field === 'string') {
+    return field;
+  } else if (typeof field === 'object' && field?.url) {
+    return field.url;
+  }
+  return null;
+}
+
+/**
+ * Processes a single CMS item: checks for the image field, validates, and processes the image if present.
+ * @param item - The CMS item object.
+ * @param collectionId - The Webflow collection ID.
+ * @param imageFieldName - The name of the image field to process.
+ */
+async function processItem(item: any, collectionId: string, imageFieldName: string): Promise<void> {
   const itemId = item.id;
   const itemName = item.fieldData?.name || 'Unnamed Item';
   
@@ -145,7 +190,7 @@ async function processItem(item: any, collectionId: string): Promise<void> {
 
   try {
     // Check for image field
-    const imageField = item.fieldData?.image;
+    const imageField = item.fieldData?.[imageFieldName];
     
     if (!imageField) {
       logger.info(`Skipping item ${itemId} - no image field found`);
@@ -153,14 +198,8 @@ async function processItem(item: any, collectionId: string): Promise<void> {
       return;
     }
 
-    // Handle different image field formats
-    let imageUrl: string | null = null;
-    
-    if (typeof imageField === 'string') {
-      imageUrl = imageField;
-    } else if (typeof imageField === 'object' && imageField?.url) {
-      imageUrl = imageField.url;
-    }
+    // Extract image URL
+    const imageUrl = getImageUrlFromField(imageField);
 
     if (!imageUrl || imageUrl.trim() === '') {
       logger.info(`Skipping item ${itemId} - image field is empty`);
@@ -178,7 +217,7 @@ async function processItem(item: any, collectionId: string): Promise<void> {
     }
 
     // Process the image
-    const success = await processImageField(item, 'image', collectionId, imageUrl);
+    const success = await processImageField(item, imageFieldName, collectionId, imageUrl);
     
     if (success) {
       logger.success(`Successfully processed item ${itemId}`);
@@ -194,7 +233,13 @@ async function processItem(item: any, collectionId: string): Promise<void> {
   }
 }
 
-async function processItems(items: any[], collectionId: string) {
+/**
+ * Processes all CMS items in parallel using a worker pool.
+ * @param items - Array of CMS items to process.
+ * @param collectionId - The Webflow collection ID.
+ * @param imageFieldName - The name of the image field to process.
+ */
+async function processItems(items: any[], collectionId: string, imageFieldName: string) {
   let index = 0;
   const total = items.length;
   stats.totalItems = total;
@@ -217,7 +262,7 @@ async function processItems(items: any[], collectionId: string) {
       logger.step(current + 1, total, `Worker ${workerId} processing item ${item.id}`);
       
       try {
-        await withRateLimitRetry(() => processItem(item, collectionId));
+        await withRateLimitRetry(() => processItem(item, collectionId, imageFieldName));
         processed++;
       } catch (error) {
         logger.error(`Worker ${workerId} failed on item ${item.id}`, error);
@@ -233,6 +278,9 @@ async function processItems(items: any[], collectionId: string) {
   await Promise.all(Array(CONCURRENCY).fill(0).map((_, i) => worker(i + 1)));
 }
 
+/**
+ * Logs final statistics about the image processing pipeline.
+ */
 function logFinalStats(): void {
   const avgCompressionRatio = stats.totalOriginalSize > 0 
     ? stats.totalOriginalSize / stats.totalCompressedSize 
@@ -261,49 +309,62 @@ function logFinalStats(): void {
   });
 }
 
-async function main(): Promise<void> {
+/**
+ * Runs the image optimization pipeline for a given collection and image field.
+ * @param collectionId - The Webflow collection ID.
+ * @param imageFieldName - The name of the image field to process.
+ */
+async function runImageOptimizationPipeline(collectionId: string, imageFieldName: string) {
   logger.info('Starting Webflow CMS image compression pipeline');
-  
+
+  const items = await fetchAllLiveItems();
+
+  if (items.length === 0) {
+    logger.warn('Collection is empty - nothing to process');
+    return;
+  }
+
+  logger.success(`Ready to process ${items.length} items with image compression`);
+
+  // Use helper for filtering
+  const itemsWithPotentialImages = filterItemsWithImages(items, imageFieldName);
+
+  logger.info(`Found ${itemsWithPotentialImages.length} items with potential images to process`);
+
+  await processItems(items, collectionId, imageFieldName);
+
+  logFinalStats();
+  logger.success('Image compression pipeline completed successfully!');
+}
+
+/**
+ * Validates required environment variables and returns config values.
+ * @returns {{ collectionId: string, imageFieldName: string }}
+ * @throws Error if any required environment variable is missing.
+ */
+function validateEnvironmentVars() {
+  const collectionId = process.env.WEBFLOW_COLLECTION_ID;
+  if (!collectionId) {
+    throw new Error('WEBFLOW_COLLECTION_ID environment variable is required');
+  }
+  if (!process.env.UPLOADTHING_TOKEN) {
+    throw new Error('UPLOADTHING_TOKEN environment variable is required');
+  }
+  if (!process.env.WEBFLOW_TOKEN) {
+    throw new Error('WEBFLOW_TOKEN environment variable is required');
+  }
+  const imageFieldName = process.env.IMAGE_FIELD_NAME || 'image';
+  return { collectionId, imageFieldName };
+}
+
+/**
+ * Main entry point. Validates environment and runs the image optimization pipeline.
+ */
+async function main(): Promise<void> {
   try {
-    const collectionId = process.env.WEBFLOW_COLLECTION_ID;
-    if (!collectionId) {
-      throw new Error('WEBFLOW_COLLECTION_ID environment variable is required');
-    }
-
-    // Validate required environment variables
-    if (!process.env.UPLOADTHING_TOKEN) {
-      throw new Error('UPLOADTHING_TOKEN environment variable is required');
-    }
-
-    if (!process.env.WEBFLOW_TOKEN) {
-      throw new Error('WEBFLOW_TOKEN environment variable is required');
-    }
-
+    const { collectionId, imageFieldName } = validateEnvironmentVars();
     logger.info('Environment validated successfully');
-
-    const items = await fetchAllLiveItems();
-    
-    if (items.length === 0) {
-      logger.warn('Collection is empty - nothing to process');
-      return;
-    }
-
-    logger.success(`Ready to process ${items.length} items with image compression`);
-    
-    // Filter items that likely have images for better progress estimates
-    const itemsWithPotentialImages = items.filter(item => 
-      item.fieldData?.image && 
-      item.fieldData.image !== '' && 
-      item.fieldData.image !== null
-    );
-    
-    logger.info(`Found ${itemsWithPotentialImages.length} items with potential images to process`);
-
-    await processItems(items, collectionId);
-
-    logFinalStats();
-    logger.success('Image compression pipeline completed successfully! 🎉');
-
+    await runImageOptimizationPipeline(collectionId, imageFieldName);
   } catch (err) {
     logger.error('Processing pipeline failed', err);
     logFinalStats(); // Log stats even on failure

@@ -1,0 +1,1216 @@
+[INFO] 2025-07-08T10:27:38.490Z - Starting Webflow CMS image compression pipeline
+[INFO] 2025-07-08T10:27:38.490Z - Environment validated successfully
+[INFO] 2025-07-08T10:27:38.491Z - Starting to fetch all CMS items from collection
+[INFO] 2025-07-08T10:27:39.137Z - Fetched batch: offset=0, count=100, total=100
+[INFO] 2025-07-08T10:27:39.818Z - Fetched batch: offset=100, count=100, total=200
+[INFO] 2025-07-08T10:27:40.022Z - Fetched batch: offset=200, count=100, total=300
+[INFO] 2025-07-08T10:27:40.264Z - Fetched batch: offset=300, count=100, total=400
+[INFO] 2025-07-08T10:27:40.495Z - Fetched batch: offset=400, count=100, total=500
+[INFO] 2025-07-08T10:27:40.674Z - Fetched batch: offset=500, count=100, total=600
+[INFO] 2025-07-08T10:27:41.017Z - Fetched batch: offset=600, count=100, total=700
+[INFO] 2025-07-08T10:27:41.195Z - Fetched batch: offset=700, count=82, total=782
+[SUCCESS] 2025-07-08T10:27:41.196Z - Successfully fetched 782 total items from collection
+[SUCCESS] 2025-07-08T10:27:41.196Z - Ready to process 782 items with image compression
+[INFO] 2025-07-08T10:27:41.196Z - Found 653 items with potential images to process
+[INFO] 2025-07-08T10:27:41.196Z - Starting parallel processing with 6 workers
+[STEP] 2025-07-08T10:27:41.196Z - [1/782] Worker 1 processing item 68665e12ca902947fe3d5ff2
+[INFO] 2025-07-08T10:27:41.196Z - Processing item: 68665e12ca902947fe3d5ff2
+  → {
+  "name": "Paris: Dark City Secrets Walking Tour",
+  "slug": "paris-dark-city-secrets-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.197Z - Skipping item 68665e12ca902947fe3d5ff2 - no image field found
+[STEP] 2025-07-08T10:27:41.197Z - [2/782] Worker 2 processing item 68665dfe7ec5e2e27c6c6378
+[INFO] 2025-07-08T10:27:41.197Z - Processing item: 68665dfe7ec5e2e27c6c6378
+  → {
+  "name": "Rome: Tivoli Day Trip with Villa d'Este and Villa Adriana",
+  "slug": "rome-tivoli-day-trip-with-villa-deste-and-villa-adriana"
+}
+[INFO] 2025-07-08T10:27:41.197Z - Skipping item 68665dfe7ec5e2e27c6c6378 - no image field found
+[STEP] 2025-07-08T10:27:41.197Z - [3/782] Worker 3 processing item 68665dfe47b3d876bf3ba1b8
+[INFO] 2025-07-08T10:27:41.197Z - Processing item: 68665dfe47b3d876bf3ba1b8
+  → {
+  "name": "Rome: Street Food Tour with Local Guide",
+  "slug": "rome-street-food-tour-with-local-guide"
+}
+[INFO] 2025-07-08T10:27:41.197Z - Skipping item 68665dfe47b3d876bf3ba1b8 - no image field found
+[STEP] 2025-07-08T10:27:41.197Z - [4/782] Worker 4 processing item 68665dfe3e7c062601388424
+[INFO] 2025-07-08T10:27:41.197Z - Processing item: 68665dfe3e7c062601388424
+  → {
+  "name": "From Rome: Pompeii, Amalfi Coast and Positano Day Trip",
+  "slug": "from-rome-pompeii-amalfi-coast-and-positano-day-trip"
+}
+[INFO] 2025-07-08T10:27:41.197Z - Skipping item 68665dfe3e7c062601388424 - no image field found
+[STEP] 2025-07-08T10:27:41.197Z - [5/782] Worker 5 processing item 68665dfe0e1cc73d1dc634c2
+[INFO] 2025-07-08T10:27:41.197Z - Processing item: 68665dfe0e1cc73d1dc634c2
+  → {
+  "name": "Rome: Vatican Museums, Sistine Chapel, and Basilica Tour",
+  "slug": "rome-vatican-museums-sistine-chapel-and-basilica-tour"
+}
+[INFO] 2025-07-08T10:27:41.197Z - Skipping item 68665dfe0e1cc73d1dc634c2 - no image field found
+[STEP] 2025-07-08T10:27:41.197Z - [6/782] Worker 6 processing item 68665dfd5106529ba420b7d5
+[INFO] 2025-07-08T10:27:41.197Z - Processing item: 68665dfd5106529ba420b7d5
+  → {
+  "name": "Rome: Trevi Fountain and Underground Guided Tour",
+  "slug": "rome-trevi-fountain-and-underground-guided-tour"
+}
+[INFO] 2025-07-08T10:27:41.198Z - Skipping item 68665dfd5106529ba420b7d5 - no image field found
+[STEP] 2025-07-08T10:27:41.198Z - [7/782] Worker 1 processing item 68665dfd7a4ff4606a96aae2
+[INFO] 2025-07-08T10:27:41.198Z - Processing item: 68665dfd7a4ff4606a96aae2
+  → {
+  "name": "Rome: Vatican, Trionfale Market Wine & Food Tasting Tour",
+  "slug": "rome-vatican-trionfale-market-wine-food-tasting-tour"
+}
+[INFO] 2025-07-08T10:27:41.198Z - Skipping item 68665dfd7a4ff4606a96aae2 - no image field found
+[STEP] 2025-07-08T10:27:41.198Z - [8/782] Worker 2 processing item 68665dfd83734269f344ec31
+[INFO] 2025-07-08T10:27:41.198Z - Processing item: 68665dfd83734269f344ec31
+  → {
+  "name": "St. Peter’s Basilica with Dome Climb and Crypt",
+  "slug": "st-peters-basilica-with-dome-climb-and-crypt"
+}
+[INFO] 2025-07-08T10:27:41.198Z - Skipping item 68665dfd83734269f344ec31 - no image field found
+[INFO] 2025-07-08T10:27:41.198Z - Processing item: 68665dfdc3d37e98207d418a
+  → {
+  "name": "Ostia Antica: Half-Day Tour from Rome by Train",
+  "slug": "ostia-antica-half-day-tour-from-rome-by-train"
+}
+[INFO] 2025-07-08T10:27:41.198Z - Skipping item 68665dfdc3d37e98207d418a - no image field found
+[STEP] 2025-07-08T10:27:41.198Z - [10/782] Worker 4 processing item 68665dfdc4158be64272602d
+[INFO] 2025-07-08T10:27:41.198Z - Processing item: 68665dfdc4158be64272602d
+  → {
+  "name": "Rome: San Clemente Underground and Basilica",
+  "slug": "rome-san-clemente-underground-and-basilica"
+}
+[INFO] 2025-07-08T10:27:41.198Z - Skipping item 68665dfdc4158be64272602d - no image field found
+[INFO] 2025-07-08T10:27:41.198Z - Processing item: 68665dfd4f55d5fedba0a6c9
+  → {
+  "name": "Rome: Villa Borghese & Ada Bike Tour with Optional Catacombs",
+  "slug": "rome-villa-borghese-ada-bike-tour-with-optional-catacombs"
+}
+[INFO] 2025-07-08T10:27:41.198Z - Skipping item 68665dfd4f55d5fedba0a6c9 - no image field found
+[STEP] 2025-07-08T10:27:41.198Z - [9/782] Worker 3 processing item 68665dfdc3d37e98207d418a
+[STEP] 2025-07-08T10:27:41.198Z - [12/782] Worker 6 processing item 68665dfdd2809db4d60fc763
+[STEP] 2025-07-08T10:27:41.198Z - [11/782] Worker 5 processing item 68665dfd4f55d5fedba0a6c9
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfdd2809db4d60fc763 - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [13/782] Worker 1 processing item 68665dfd3fa1a52f89271c1c
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfd3fa1a52f89271c1c
+  → {
+  "name": "Rome: City Highlights Moonlight Walking Tour",
+  "slug": "rome-city-highlights-moonlight-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfd3fa1a52f89271c1c - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [14/782] Worker 2 processing item 68665dfc16c93a3fb13487c6
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfc16c93a3fb13487c6
+  → {
+  "name": "Rome: Urban Rafting Tour to Tiber Island with A Local Pizza",
+  "slug": "rome-urban-rafting-tour-to-tiber-island-with-a-local-pizza"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfdd2809db4d60fc763
+  → {
+  "name": "Rome: Highlights Vespa Sidecar Tour with Coffee and Gelato",
+  "slug": "rome-highlights-vespa-sidecar-tour-with-coffee-and-gelato"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfc16c93a3fb13487c6 - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [15/782] Worker 3 processing item 68665dfc36c5a127f14255d9
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfc36c5a127f14255d9
+  → {
+  "name": "Rome: Sunrise E-Bike Experience with Coffee Tasting",
+  "slug": "rome-sunrise-e-bike-experience-with-coffee-tasting"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfc36c5a127f14255d9 - no image field found
+[INFO] 2025-07-08T10:27:41.199Z - Progress: 10/782 completed
+[STEP] 2025-07-08T10:27:41.199Z - [16/782] Worker 4 processing item 68665dfcd9e1ff67640c9a11
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfcd9e1ff67640c9a11
+  → {
+  "name": "Rome: Secrets Beneath Castel Sant'Angelo Guided Tour",
+  "slug": "rome-secrets-beneath-castel-santangelo-guided-tour"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfcd9e1ff67640c9a11 - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [17/782] Worker 5 processing item 68665dfcd2809db4d60fc70e
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfcd2809db4d60fc70e
+  → {
+  "name": "From Rome: Castel Gandolfo Kayak and Swimming Lake Tour",
+  "slug": "from-rome-castel-gandolfo-kayak-and-swimming-lake-tour"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfcd2809db4d60fc70e - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [18/782] Worker 6 processing item 68665dfc7a4ff4606a96a949
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfc7a4ff4606a96a949
+  → {
+  "name": "Paris: Winter Cheese Tour (Special Raclette)",
+  "slug": "paris-winter-cheese-tour-special-raclette"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfc7a4ff4606a96a949 - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [19/782] Worker 1 processing item 68665dfc0b8fabf98a2a8417
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfc0b8fabf98a2a8417
+  → {
+  "name": "Rome: Priority Access Colosseum, Roman Forum & Palatine Tour",
+  "slug": "rome-priority-access-colosseum-roman-forum-palatine-tour"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfc0b8fabf98a2a8417 - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [20/782] Worker 2 processing item 68665dfc53a828ddd1e0162c
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfc53a828ddd1e0162c
+  → {
+  "name": "Rome: Crypts and Catacombs Underground Tour with Transfers",
+  "slug": "rome-crypts-and-catacombs-underground-tour-with-transfers"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfc53a828ddd1e0162c - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [21/782] Worker 3 processing item 68665dfc3a1e78501463c80d
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfc3a1e78501463c80d
+  → {
+  "name": "Paris: Roland-Garros Stadium Guided Backstage Tour",
+  "slug": "paris-roland-garros-stadium-guided-backstage-tour"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfc3a1e78501463c80d - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [22/782] Worker 4 processing item 68665dfc19ae4e1b5b331c20
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfc19ae4e1b5b331c20
+  → {
+  "name": "Paris: Hidden Gems of Montmartre with Local Guide",
+  "slug": "paris-hidden-gems-of-montmartre-with-local-guide"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfc19ae4e1b5b331c20 - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [23/782] Worker 5 processing item 68665dfb47b3d876bf3ba01f
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfb47b3d876bf3ba01f
+  → {
+  "name": "Paris: 3-Hour Chocolate & Patisserie Walking Tour",
+  "slug": "paris-3-hour-chocolate-patisserie-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfb47b3d876bf3ba01f - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [24/782] Worker 6 processing item 68665dfb3306f58268c5b08c
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfb3306f58268c5b08c
+  → {
+  "name": "Paris: Walking Food Tour in Saint Germain des Prés",
+  "slug": "paris-walking-food-tour-in-saint-germain-des-pres"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfb3306f58268c5b08c - no image field found
+[STEP] 2025-07-08T10:27:41.199Z - [25/782] Worker 1 processing item 68665dfb34609290b04bdd89
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfb34609290b04bdd89
+  → {
+  "name": "Paris: Marais District Jewish History Guided Walking Tour",
+  "slug": "paris-marais-district-jewish-history-guided-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfb34609290b04bdd89 - no image field found
+[INFO] 2025-07-08T10:27:41.199Z - Progress: 20/782 completed
+[STEP] 2025-07-08T10:27:41.199Z - [26/782] Worker 2 processing item 68665dfb5445241bd394555e
+[INFO] 2025-07-08T10:27:41.199Z - Processing item: 68665dfb5445241bd394555e
+  → {
+  "name": "From Paris: Day Trip to Champagne with 8 Tastings & Lunch",
+  "slug": "from-paris-day-trip-to-champagne-with-8-tastings-lunch"
+}
+[INFO] 2025-07-08T10:27:41.199Z - Skipping item 68665dfb5445241bd394555e - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [27/782] Worker 3 processing item 68665dfb16c93a3fb13486f9
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfb16c93a3fb13486f9
+  → {
+  "name": "Paris: Ile de la Cite Walking Tour with Notre Dame",
+  "slug": "paris-ile-de-la-cite-walking-tour-with-notre-dame"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfb16c93a3fb13486f9 - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [28/782] Worker 4 processing item 68665dfb67527db9f22f14e1
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfb67527db9f22f14e1
+  → {
+  "name": "Paris: Orangerie Museum Guided Tour with Monet's Water Lilies",
+  "slug": "paris-orangerie-museum-guided-tour-with-monets-water-lilies"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfb67527db9f22f14e1 - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [29/782] Worker 5 processing item 68665dfbfb6510ddaa92cd4a
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfbfb6510ddaa92cd4a
+  → {
+  "name": "Paris: Sunrise Run & Sightseeing Small Group Tour",
+  "slug": "paris-sunrise-run-sightseeing-small-group-tour"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfbfb6510ddaa92cd4a - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [30/782] Worker 6 processing item 68665dfbb52ed62fa6daca88
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfbb52ed62fa6daca88
+  → {
+  "name": "Paris: Curated Wine Tasting Experience",
+  "slug": "paris-curated-wine-tasting-experience"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfbb52ed62fa6daca88 - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [31/782] Worker 1 processing item 68665dfb7e6f75fe0ba55055
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfb7e6f75fe0ba55055
+  → {
+  "name": "From Paris: Skip-the-Line Palace of Versailles Bike Tour",
+  "slug": "from-paris-skip-the-line-palace-of-versailles-bike-tour-3eb75"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfb7e6f75fe0ba55055 - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [32/782] Worker 2 processing item 68665dfa29a7d94e0ecd629d
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfa29a7d94e0ecd629d
+  → {
+  "name": "Paris: Pere Lachaise Cemetery Guided Tour",
+  "slug": "paris-pere-lachaise-cemetery-guided-tour"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfa29a7d94e0ecd629d - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [33/782] Worker 3 processing item 68665dfa5ee217c9bc8a8584
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfa5ee217c9bc8a8584
+  → {
+  "name": "Versailles: Palace of Versailles and Marie Antoinette Tour",
+  "slug": "versailles-palace-of-versailles-and-marie-antoinette-tour"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfa5ee217c9bc8a8584 - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [34/782] Worker 4 processing item 68665dfa7a3c970637196f47
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfa7a3c970637196f47
+  → {
+  "name": "Paris: Private Guided City Tour in a Traction Avant or DS 21",
+  "slug": "paris-private-guided-city-tour-in-a-traction-avant-or-ds-21"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfa7a3c970637196f47 - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [35/782] Worker 5 processing item 68665dfa86308a104a75e15c
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfa86308a104a75e15c
+  → {
+  "name": "From Paris: Skip-the-Line Palace of Versailles Bike Tour",
+  "slug": "from-paris-skip-the-line-palace-of-versailles-bike-tour"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfa86308a104a75e15c - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [36/782] Worker 6 processing item 68665dfaa29e1d01cf3a2d08
+[INFO] 2025-07-08T10:27:41.200Z - Progress: 30/782 completed
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfaa29e1d01cf3a2d08
+  → {
+  "name": "Paris: Unofficial Emily in Paris Show Locations Walking Tour",
+  "slug": "paris-unofficial-emily-in-paris-show-locations-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfa3fa1a52f892719fe
+  → {
+  "name": "From Paris: Versailles Skip-the-Line Tour & Gardens Access",
+  "slug": "from-paris-versailles-skip-the-line-tour-gardens-access"
+}
+[STEP] 2025-07-08T10:27:41.200Z - [37/782] Worker 1 processing item 68665dfa3fa1a52f892719fe
+[INFO] 2025-07-08T10:27:41.200Z - Processing item: 68665dfa5ee217c9bc8a8511
+  → {
+  "name": "Paris: Gourmet Food Tour with 10+ Tastings and Wine",
+  "slug": "paris-gourmet-food-tour-with-10-tastings-and-wine"
+}
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfaa29e1d01cf3a2d08 - no image field found
+[STEP] 2025-07-08T10:27:41.200Z - [38/782] Worker 2 processing item 68665dfa5ee217c9bc8a8511
+[INFO] 2025-07-08T10:27:41.200Z - Skipping item 68665dfa3fa1a52f892719fe - no image field found
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665dfa5ee217c9bc8a8511 - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [39/782] Worker 3 processing item 68665dfa0088bdc97bb015f2
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665dfa0088bdc97bb015f2
+  → {
+  "name": "Paris : Let's get thick - Canal Saint Martin",
+  "slug": "paris-lets-get-thick---canal-saint-martin"
+}
+[STEP] 2025-07-08T10:27:41.201Z - [40/782] Worker 4 processing item 68665dfa566fbba9ad97e2f3
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665dfa566fbba9ad97e2f3
+  → {
+  "name": "Paris: 1-Hour Seine Cruise starting at the Eiffel Tower",
+  "slug": "paris-1-hour-seine-cruise-starting-at-the-eiffel-tower"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665dfa0088bdc97bb015f2 - no image field found
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665dfa566fbba9ad97e2f3 - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [41/782] Worker 5 processing item 68665dfaf5376ea62e2c3912
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665dfaf5376ea62e2c3912
+  → {
+  "name": "Paris: Bake the Perfect French Croissant with a Chef",
+  "slug": "paris-bake-the-perfect-french-croissant-with-a-chef"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665dfaf5376ea62e2c3912 - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [42/782] Worker 6 processing item 68665dfa5ee80adb394f4e8a
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665dfa5ee80adb394f4e8a
+  → {
+  "name": "Burgundy: Winery Tour",
+  "slug": "burgundy-winery-tour"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665dfa5ee80adb394f4e8a - no image field found
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665dfa3e7c062601388164
+  → {
+  "name": "London: Tate Modern Tour with Art Expert",
+  "slug": "london-tate-modern-tour-with-art-expert"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665dfa3e7c062601388164 - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [43/782] Worker 1 processing item 68665dfa3e7c062601388164
+[STEP] 2025-07-08T10:27:41.201Z - [44/782] Worker 2 processing item 68665df9c2ad48342e436c13
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665df9c2ad48342e436c13
+  → {
+  "name": "Marrakech: Street Food Tour by Night",
+  "slug": "marrakech-street-food-tour-by-night"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665df9c2ad48342e436c13 - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [45/782] Worker 3 processing item 68665df9475dc77ac15535c5
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665df9475dc77ac15535c5
+  → {
+  "name": "From Marrakech: High Atlas Mountains and 5 Valleys Day Trip",
+  "slug": "from-marrakech-high-atlas-mountains-and-5-valleys-day-trip"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665df9475dc77ac15535c5 - no image field found
+[INFO] 2025-07-08T10:27:41.201Z - Progress: 40/782 completed
+[STEP] 2025-07-08T10:27:41.201Z - [46/782] Worker 4 processing item 68665df967527db9f22f139c
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665df967527db9f22f139c
+  → {
+  "name": "Marrakech: Classic Shared Balloon Flight",
+  "slug": "marrakech-classic-shared-balloon-flight"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665df967527db9f22f139c - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [47/782] Worker 5 processing item 68665df9c08afc61dee3fbd7
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665df9c08afc61dee3fbd7
+  → {
+  "name": "London: East End Food Tour",
+  "slug": "london-east-end-food-tour"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665df9c08afc61dee3fbd7 - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [48/782] Worker 6 processing item 68665df925c8deee60cc7508
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665df925c8deee60cc7508
+  → {
+  "name": "Marrakech: 3-Hour Colorful Souks Tour",
+  "slug": "marrakech-3-hour-colorful-souks-tour"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665df925c8deee60cc7508 - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [49/782] Worker 1 processing item 68665df97dd0210090364123
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665df97dd0210090364123
+  → {
+  "name": "Marrakech: Tagine Cookery Class With a Local",
+  "slug": "marrakech-tagine-cookery-class-with-a-local"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665df97dd0210090364123 - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [50/782] Worker 2 processing item 68665df95ee80adb394f4e04
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665df95ee80adb394f4e04 - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [51/782] Worker 3 processing item 68665df904b9ed02a6f7a3eb
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665df904b9ed02a6f7a3eb
+  → {
+  "name": "Marrakech: Authentic Moroccan Food Tour & Dinner",
+  "slug": "marrakech-authentic-moroccan-food-tour-dinner"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665df95ee80adb394f4e04
+  → {
+  "name": "Marrakech: Pottery Workshop with Moroccan Tea",
+  "slug": "marrakech-pottery-workshop-with-moroccan-tea"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665df904b9ed02a6f7a3eb - no image field found
+[STEP] 2025-07-08T10:27:41.201Z - [52/782] Worker 4 processing item 68665df829a7d94e0ecd61e5
+[INFO] 2025-07-08T10:27:41.201Z - Processing item: 68665df829a7d94e0ecd61e5
+  → {
+  "name": "From London: Stonehenge Inner Circle and Windsor Day Trip",
+  "slug": "from-london-stonehenge-inner-circle-and-windsor-day-trip"
+}
+[INFO] 2025-07-08T10:27:41.201Z - Skipping item 68665df829a7d94e0ecd61e5 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [53/782] Worker 5 processing item 68665df83fa1a52f89271765
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df83fa1a52f89271765
+  → {
+  "name": "Tottenham Hotspur Stadium: The Dare Skywalk Experience",
+  "slug": "tottenham-hotspur-stadium-the-dare-skywalk-experience"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df83fa1a52f89271765 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [54/782] Worker 6 processing item 68665df86cb1fdaa1912cd70
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df86cb1fdaa1912cd70
+  → {
+  "name": "London: Soho Music and Historic Pubs Experience",
+  "slug": "london-soho-music-and-historic-pubs-experience"
+}
+[STEP] 2025-07-08T10:27:41.202Z - [55/782] Worker 1 processing item 68665df82eabbe644eb218f0
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df82eabbe644eb218f0
+  → {
+  "name": "The Royal Parks and Royal Palaces 3.5-Hour Morning Tour",
+  "slug": "the-royal-parks-and-royal-palaces-3-5-hour-morning-tour"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df82eabbe644eb218f0 - no image field found
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df86cb1fdaa1912cd70 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [56/782] Worker 2 processing item 68665df8e51822d96a0dcac1
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df8e51822d96a0dcac1
+  → {
+  "name": "London: Wembley Stadium Guided Tour",
+  "slug": "london-wembley-stadium-guided-tour"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Progress: 50/782 completed
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df8e51822d96a0dcac1 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [57/782] Worker 3 processing item 68665df81c6bf3886a625cc0
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df81c6bf3886a625cc0
+  → {
+  "name": "London: National Gallery Tour with Art Expert",
+  "slug": "london-national-gallery-tour-with-art-expert"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df81c6bf3886a625cc0 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [58/782] Worker 4 processing item 68665df84ffc70e47413a504
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df84ffc70e47413a504
+  → {
+  "name": "London: Guided Sherlock Holmes Walking Tour",
+  "slug": "london-guided-sherlock-holmes-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df84ffc70e47413a504 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [59/782] Worker 5 processing item 68665df883734269f344e8a3
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df883734269f344e8a3
+  → {
+  "name": "Chelsea Football Club Stadium and Museum Tour",
+  "slug": "chelsea-football-club-stadium-and-museum-tour"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df883734269f344e8a3 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [60/782] Worker 6 processing item 68665df85c205e5c9c2df30c
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df85c205e5c9c2df30c
+  → {
+  "name": "From London: Seven Sisters and South Downs Full-Day Tour",
+  "slug": "from-london-seven-sisters-and-south-downs-full-day-tour"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df85c205e5c9c2df30c - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [61/782] Worker 1 processing item 68665df7566fbba9ad97e1c3
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df7566fbba9ad97e1c3
+  → {
+  "name": "London: Historical Pub Walking Tour",
+  "slug": "london-historical-pub-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df7566fbba9ad97e1c3 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [62/782] Worker 2 processing item 68665df74ffc70e47413a4a6
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df74ffc70e47413a4a6
+  → {
+  "name": "London: Beatles Tour incl. Abbey Road with Richard Porter",
+  "slug": "london-beatles-tour-incl-abbey-road-with-richard-porter"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df74ffc70e47413a4a6 - no image field found
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df73a1e78501463bcf3 - no image field found
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df73a1e78501463bcf3
+  → {
+  "name": "London: Changing of The Guard Tour",
+  "slug": "london-changing-of-the-guard-tour"
+}
+[STEP] 2025-07-08T10:27:41.202Z - [63/782] Worker 3 processing item 68665df73a1e78501463bcf3
+[STEP] 2025-07-08T10:27:41.202Z - [64/782] Worker 4 processing item 68665df75ee80adb394f4d19
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df75ee80adb394f4d19
+  → {
+  "name": "London: Jack the Ripper Guided Walking Tour",
+  "slug": "london-jack-the-ripper-guided-walking-tour-27149"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df75ee80adb394f4d19 - no image field found
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df7aae54dc9794804b8
+  → {
+  "name": "London: Chelsea Football Club Stadium and Museum Tour",
+  "slug": "london-chelsea-football-club-stadium-and-museum-tour"
+}
+[STEP] 2025-07-08T10:27:41.202Z - [65/782] Worker 5 processing item 68665df7aae54dc9794804b8
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df7aae54dc9794804b8 - no image field found
+[INFO] 2025-07-08T10:27:41.202Z - Progress: 60/782 completed
+[STEP] 2025-07-08T10:27:41.202Z - [66/782] Worker 6 processing item 68665df7e72938d961e6ec61
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df7e72938d961e6ec61
+  → {
+  "name": "East London: Street Art Tour & Spray Painting Session",
+  "slug": "east-london-street-art-tour-spray-painting-session"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df7e72938d961e6ec61 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [67/782] Worker 1 processing item 68665df7de7c05db6b5bd844
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df7de7c05db6b5bd844
+  → {
+  "name": "London: Jack the Ripper Guided Walking Tour",
+  "slug": "london-jack-the-ripper-guided-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df76c0fb87684086461
+  → {
+  "name": "From London: Oxford and Cotswolds Villages Day Trip",
+  "slug": "from-london-oxford-and-cotswolds-villages-day-trip"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df7de7c05db6b5bd844 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [68/782] Worker 2 processing item 68665df76c0fb87684086461
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df76c0fb87684086461 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [69/782] Worker 3 processing item 68665df7c4158be642725af4
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df7c4158be642725af4
+  → {
+  "name": "London: Full-Day Windsor, Stonehenge, and Oxford Tour",
+  "slug": "london-full-day-windsor-stonehenge-and-oxford-tour"
+}
+[INFO] 2025-07-08T10:27:41.202Z - Skipping item 68665df7c4158be642725af4 - no image field found
+[STEP] 2025-07-08T10:27:41.202Z - [70/782] Worker 4 processing item 68665df72b5d59c33b1de6ea
+[INFO] 2025-07-08T10:27:41.202Z - Processing item: 68665df72b5d59c33b1de6ea
+  → {
+  "name": "London: Westminster to Greenwich River Thames Cruise",
+  "slug": "london-westminster-to-greenwich-river-thames-cruise"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df72b5d59c33b1de6ea - no image field found
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df64654135be79ef52a
+  → {
+  "name": "From London: Full-Day Cotswolds Small-Group Tour",
+  "slug": "from-london-full-day-cotswolds-small-group-tour"
+}
+[STEP] 2025-07-08T10:27:41.203Z - [71/782] Worker 5 processing item 68665df64654135be79ef52a
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df64654135be79ef52a - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [72/782] Worker 6 processing item 68665df6915e51b771b3a81a
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df6915e51b771b3a81a
+  → {
+  "name": "From London: Harry Potter Warner Bros Studio Tour",
+  "slug": "from-london-harry-potter-warner-bros-studio-tour"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df6915e51b771b3a81a - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [73/782] Worker 1 processing item 68665df6aa2b78f129b3b0b2
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df6aa2b78f129b3b0b2
+  → {
+  "name": "London: Kensington Palace Gardens Tour with Royal High Tea",
+  "slug": "london-kensington-palace-gardens-tour-with-royal-high-tea"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df6aa2b78f129b3b0b2 - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [74/782] Worker 2 processing item 68665df65dcda68633078ec8
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df65dcda68633078ec8
+  → {
+  "name": "London: Borough Market Foodie Walking Tour with Tastings",
+  "slug": "london-borough-market-foodie-walking-tour-with-tastings"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df65dcda68633078ec8 - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [75/782] Worker 3 processing item 68665df685677a7394c586a6
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df685677a7394c586a6
+  → {
+  "name": "From Edinburgh: West Highlands, Lochs, and Castles Tour",
+  "slug": "from-edinburgh-west-highlands-lochs-and-castles-tour"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df685677a7394c586a6 - no image field found
+[INFO] 2025-07-08T10:27:41.203Z - Progress: 70/782 completed
+[STEP] 2025-07-08T10:27:41.203Z - [76/782] Worker 4 processing item 68665df62eabbe644eb21780
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df62eabbe644eb21780
+  → {
+  "name": "Edinburgh: Full-Day Highland Lochs, Glens and Whisky Tour",
+  "slug": "edinburgh-full-day-highland-lochs-glens-and-whisky-tour"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df62eabbe644eb21780 - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [77/782] Worker 5 processing item 68665df633371009c74c9dee
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df633371009c74c9dee
+  → {
+  "name": "Edinburgh: Glenfinnan, Fort William, and Glencoe Day Tour",
+  "slug": "edinburgh-glenfinnan-fort-william-and-glencoe-day-tour"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df633371009c74c9dee - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [78/782] Worker 6 processing item 68665df634609290b04bd9d8
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df634609290b04bd9d8
+  → {
+  "name": "Edinburgh: Underground Vaults Evening Ghost Tour with Whisky",
+  "slug": "edinburgh-underground-vaults-evening-ghost-tour-with-whisky"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df634609290b04bd9d8 - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [79/782] Worker 1 processing item 68665df6ba64fbb00e6f9efa
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df6ba64fbb00e6f9efa
+  → {
+  "name": "Edinburgh: Old Town History and Tales Walking Tour",
+  "slug": "edinburgh-old-town-history-and-tales-walking-tour"
+}
+[STEP] 2025-07-08T10:27:41.203Z - [80/782] Worker 2 processing item 68665df647b3d876bf3b9c57
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df6ba64fbb00e6f9efa - no image field found
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df647b3d876bf3b9c57
+  → {
+  "name": "Edinburgh Castle: Guided Walking Tour with Entry Ticket",
+  "slug": "edinburgh-castle-guided-walking-tour-with-entry-ticket"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df647b3d876bf3b9c57 - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [81/782] Worker 3 processing item 68665df634609290b04bd9b6
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df634609290b04bd9b6
+  → {
+  "name": "Edinburgh: Harry Potter Magical Guided Walking Tour",
+  "slug": "edinburgh-harry-potter-magical-guided-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df634609290b04bd9b6 - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [82/782] Worker 4 processing item 68665df66cb1fdaa1912c9bc
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df66cb1fdaa1912c9bc
+  → {
+  "name": "Edinburgh: Loch Ness, Glencoe & the Scottish Highlands Tour",
+  "slug": "edinburgh-loch-ness-glencoe-the-scottish-highlands-tour"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df66cb1fdaa1912c9bc - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [83/782] Worker 5 processing item 68665df5faaf702cdfbaf81b
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df5faaf702cdfbaf81b
+  → {
+  "name": "Edinburgh: Comedy Walking Tour with Professional Comedian",
+  "slug": "edinburgh-comedy-walking-tour-with-professional-comedian"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df5faaf702cdfbaf81b - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [84/782] Worker 6 processing item 68665df597fa82357a82baac
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df597fa82357a82baac
+  → {
+  "name": "Dubai: Desert Safari and Al Khayma Camp Overnight Experience",
+  "slug": "dubai-desert-safari-and-al-khayma-camp-overnight-experience"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df597fa82357a82baac - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [85/782] Worker 1 processing item 68665df5c4158be642725916
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df5c4158be642725916
+  → {
+  "name": "Dubai: Sunrise Balloon Flight with Camel Ride & Breakfast",
+  "slug": "dubai-sunrise-balloon-flight-with-camel-ride-breakfast"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df5c4158be642725916 - no image field found
+[INFO] 2025-07-08T10:27:41.203Z - Progress: 80/782 completed
+[STEP] 2025-07-08T10:27:41.203Z - [86/782] Worker 2 processing item 68665df5aa493926f0ecef34
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df5aa493926f0ecef34
+  → {
+  "name": "Edinburgh: Old Town Walking Tour and Beer Tasting",
+  "slug": "edinburgh-old-town-walking-tour-and-beer-tasting"
+}
+[INFO] 2025-07-08T10:27:41.203Z - Skipping item 68665df5aa493926f0ecef34 - no image field found
+[STEP] 2025-07-08T10:27:41.203Z - [87/782] Worker 3 processing item 68665df5404cb02f188c2fd2
+[INFO] 2025-07-08T10:27:41.203Z - Processing item: 68665df5404cb02f188c2fd2
+  → {
+  "name": "From Dubai: Abu Dhabi Premium Full-Day Sightseeing Tour",
+  "slug": "from-dubai-abu-dhabi-premium-full-day-sightseeing-tour"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df5404cb02f188c2fd2 - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [88/782] Worker 4 processing item 68665df58cc5ea3917c555b1
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df58cc5ea3917c555b1
+  → {
+  "name": "Dubai: Old Dubai Souks, Abra Ride, and Street Food Tour",
+  "slug": "dubai-old-dubai-souks-abra-ride-and-street-food-tour"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df58cc5ea3917c555b1 - no image field found
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df5b5e62610dcef3c0e
+  → {
+  "name": "Dubai Marina: Yacht Tour with Breakfast or BBQ",
+  "slug": "dubai-marina-yacht-tour-with-breakfast-or-bbq"
+}
+[STEP] 2025-07-08T10:27:41.204Z - [89/782] Worker 5 processing item 68665df5b5e62610dcef3c0e
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df5b5e62610dcef3c0e - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [90/782] Worker 6 processing item 68665df5e72938d961e6eb33
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df5e72938d961e6eb33
+  → {
+  "name": "Lanzarote: Wine Tasting Tour at El Grifo Bodega",
+  "slug": "lanzarote-wine-tasting-tour-at-el-grifo-bodega"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df5e72938d961e6eb33 - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [91/782] Worker 1 processing item 68665df5c3d37e98207d3ba8
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df5c3d37e98207d3ba8
+  → {
+  "name": "Dubai: Burj Khalifa Fountain Show and Burj Lake Ride",
+  "slug": "dubai-burj-khalifa-fountain-show-and-burj-lake-ride"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df5c3d37e98207d3ba8 - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [92/782] Worker 2 processing item 68665df53306f58268c5a5c6
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df53306f58268c5a5c6
+  → {
+  "name": "Dubai: Desert Safari, Quad Bike, Camel Ride & Al Khayma Camp",
+  "slug": "dubai-desert-safari-quad-bike-camel-ride-al-khayma-camp"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df53306f58268c5a5c6 - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [93/782] Worker 3 processing item 68665df5915e51b771b3a6cc
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df5915e51b771b3a6cc
+  → {
+  "name": "Dubai: Hot Air Balloon Tour with Camel Ride and Breakfast",
+  "slug": "dubai-hot-air-balloon-tour-with-camel-ride-and-breakfast"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df5915e51b771b3a6cc - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [94/782] Worker 4 processing item 68665df4b52ed62fa6dac40b
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df4b52ed62fa6dac40b
+  → {
+  "name": "Dubai: Zip Line across the Marina",
+  "slug": "dubai-zip-line-across-the-marina"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df4b52ed62fa6dac40b - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [95/782] Worker 5 processing item 68665df4b52ed62fa6dac387
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df4b52ed62fa6dac387
+  → {
+  "name": "Gran Canaria: The Volcano Heart Tour & Local Food Tasting",
+  "slug": "gran-canaria-the-volcano-heart-tour-local-food-tasting"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df4b52ed62fa6dac387 - no image field found
+[INFO] 2025-07-08T10:27:41.204Z - Progress: 90/782 completed
+[STEP] 2025-07-08T10:27:41.204Z - [96/782] Worker 6 processing item 68665df425c8deee60cc686a
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df425c8deee60cc686a
+  → {
+  "name": "Lanzarote: Timanfaya Eruptions Volcano Trekking Tour",
+  "slug": "lanzarote-timanfaya-eruptions-volcano-trekking-tour"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df425c8deee60cc686a - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [97/782] Worker 1 processing item 68665df48f34929823fa274a
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df48f34929823fa274a
+  → {
+  "name": "From Las Palmas: Treasures of Gran Canaria Tour",
+  "slug": "from-las-palmas-treasures-of-gran-canaria-tour"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df48f34929823fa274a - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [98/782] Worker 2 processing item 68665df44654135be79ef3b2
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df44654135be79ef3b2
+  → {
+  "name": "Budapest: Buda Castle Vampires & Myths Evening Walking Tour",
+  "slug": "budapest-buda-castle-vampires-myths-evening-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df44654135be79ef3b2 - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [99/782] Worker 3 processing item 68665df485677a7394c584f7
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df485677a7394c584f7
+  → {
+  "name": "Fuerteventura: Sailing Tour of Lobos Island",
+  "slug": "fuerteventura-sailing-tour-of-lobos-island"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df485677a7394c584f7 - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [100/782] Worker 4 processing item 68665df48590cc5c72301584
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df48590cc5c72301584
+  → {
+  "name": "Budapest: Buda Castle District Vampires and Myths Night Tour",
+  "slug": "budapest-buda-castle-district-vampires-and-myths-night-tour"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df48590cc5c72301584 - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [101/782] Worker 5 processing item 68665df35ee80adb394f47c4
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df35ee80adb394f47c4
+  → {
+  "name": "Gran Canaria: The Red Canyon Tour with Local Food Tasting",
+  "slug": "gran-canaria-the-red-canyon-tour-with-local-food-tasting"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df35ee80adb394f47c4 - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [102/782] Worker 6 processing item 68665df3b60feab0105f9037
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df3b60feab0105f9037
+  → {
+  "name": "Half-Day Etyek Wine Tour from Budapest with Meal",
+  "slug": "half-day-etyek-wine-tour-from-budapest-with-meal"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df3b60feab0105f9037 - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [103/782] Worker 1 processing item 68665df35ee217c9bc8a7eec
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df35ee217c9bc8a7eec
+  → {
+  "name": "From Adeje: Mt. Teide Forest Off-Road Quad Tour",
+  "slug": "from-adeje-mt-teide-forest-off-road-quad-tour"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df35ee217c9bc8a7eec - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [104/782] Worker 2 processing item 68665df38e6a5a904142d85c
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df38e6a5a904142d85c
+  → {
+  "name": "Budapest: Buda Castle Cave Tour",
+  "slug": "budapest-buda-castle-cave-tour"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df38e6a5a904142d85c - no image field found
+[STEP] 2025-07-08T10:27:41.204Z - [105/782] Worker 3 processing item 68665df3030f5cf6993b8f1a
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df3030f5cf6993b8f1a
+  → {
+  "name": "Budapest: City Highlights Cruise with Welcome Drink",
+  "slug": "budapest-city-highlights-cruise-with-welcome-drink"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df3030f5cf6993b8f1a - no image field found
+[INFO] 2025-07-08T10:27:41.204Z - Progress: 100/782 completed
+[STEP] 2025-07-08T10:27:41.204Z - [106/782] Worker 4 processing item 68665df3b5e62610dcef2902
+[INFO] 2025-07-08T10:27:41.204Z - Processing item: 68665df3b5e62610dcef2902
+  → {
+  "name": "Budapest: Hungarian Wine Tasting Experience",
+  "slug": "budapest-hungarian-wine-tasting-experience"
+}
+[INFO] 2025-07-08T10:27:41.204Z - Skipping item 68665df3b5e62610dcef2902 - no image field found
+[INFO] 2025-07-08T10:27:41.205Z - Processing item: 68665df3afab266dc2dd0c5a
+  → {
+  "name": "3-Hour Orientation Walking Tour of Buda and Pest",
+  "slug": "3-hour-orientation-walking-tour-of-buda-and-pest"
+}
+[STEP] 2025-07-08T10:27:41.205Z - [107/782] Worker 5 processing item 68665df3afab266dc2dd0c5a
+[INFO] 2025-07-08T10:27:41.205Z - Skipping item 68665df3afab266dc2dd0c5a - no image field found
+[STEP] 2025-07-08T10:27:41.205Z - [108/782] Worker 6 processing item 68665df36c0fb8768408607c
+[INFO] 2025-07-08T10:27:41.205Z - Processing item: 68665df36c0fb8768408607c
+  → {
+  "name": "Budapest: Jewish Heritage Guided Tour with Synagogue Ticket",
+  "slug": "budapest-jewish-heritage-guided-tour-with-synagogue-ticket"
+}
+[INFO] 2025-07-08T10:27:41.205Z - Skipping item 68665df36c0fb8768408607c - no image field found
+[STEP] 2025-07-08T10:27:41.205Z - [109/782] Worker 1 processing item 68665df35106529ba420aeb0
+[INFO] 2025-07-08T10:27:41.205Z - Processing item: 68665df35106529ba420aeb0
+  → {
+  "name": "Barcelona: Montserrat & Ancient Winery Tour with Tapas/Lunch",
+  "slug": "barcelona-montserrat-ancient-winery-tour-with-tapas-lunch"
+}
+[STEP] 2025-07-08T10:27:41.205Z - [110/782] Worker 2 processing item 68665df3b5e62610dcef28c6
+[INFO] 2025-07-08T10:27:41.205Z - Skipping item 68665df35106529ba420aeb0 - no image field found
+[INFO] 2025-07-08T10:27:41.205Z - Processing item: 68665df3b5e62610dcef28c6
+  → {
+  "name": "Barcelona: Daytime or Sunset Catamaran Cruise with Music",
+  "slug": "barcelona-daytime-or-sunset-catamaran-cruise-with-music"
+}
+[INFO] 2025-07-08T10:27:41.205Z - Skipping item 68665df3b5e62610dcef28c6 - no image field found
+[STEP] 2025-07-08T10:27:41.205Z - [111/782] Worker 3 processing item 68665df3e5fde51a7ee908e2
+[INFO] 2025-07-08T10:27:41.205Z - Processing item: 68665df3e5fde51a7ee908e2
+  → {
+  "name": "Barcelona: Sagrada Familia Skip-the-Line Entry Ticket & Tour",
+  "slug": "barcelona-sagrada-familia-skip-the-line-entry-ticket-tour"
+}
+[INFO] 2025-07-08T10:27:41.205Z - Skipping item 68665df3e5fde51a7ee908e2 - no image field found
+[STEP] 2025-07-08T10:27:41.205Z - [112/782] Worker 4 processing item 68665df2d9e1ff67640c92a8
+[INFO] 2025-07-08T10:27:41.205Z - Processing item: 68665df2d9e1ff67640c92a8
+  → {
+  "name": "Barcelona: Park Guell Guided Tour with Skip The Line Entry",
+  "slug": "barcelona-park-guell-guided-tour-with-skip-the-line-entry"
+}
+[INFO] 2025-07-08T10:27:41.206Z - Skipping item 68665df2d9e1ff67640c92a8 - no image field found
+[STEP] 2025-07-08T10:27:41.206Z - [113/782] Worker 5 processing item 68665df26c0fb87684085ffb
+[INFO] 2025-07-08T10:27:41.206Z - Processing item: 68665df26c0fb87684085ffb
+  → {
+  "name": "Amsterdam: 1-Hour Cheese and Wine Tasting by Old Amsterdam",
+  "slug": "amsterdam-1-hour-cheese-and-wine-tasting-by-old-amsterdam"
+}
+[INFO] 2025-07-08T10:27:41.206Z - Skipping item 68665df26c0fb87684085ffb - no image field found
+[STEP] 2025-07-08T10:27:41.206Z - [114/782] Worker 6 processing item 68665df2ca902947fe3d3579
+[INFO] 2025-07-08T10:27:41.206Z - Processing item: 68665df2ca902947fe3d3579
+  → {
+  "name": "Amsterdam: Jewish Quarter Walking Tour",
+  "slug": "amsterdam-jewish-quarter-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.206Z - Skipping item 68665df2ca902947fe3d3579 - no image field found
+[STEP] 2025-07-08T10:27:41.206Z - [115/782] Worker 1 processing item 68665df26cb1fdaa1912c719
+[INFO] 2025-07-08T10:27:41.206Z - Processing item: 68665df26cb1fdaa1912c719
+  → {
+  "name": "Amsterdam: Countryside and Villages Bike Tour",
+  "slug": "amsterdam-countryside-and-villages-bike-tour"
+}
+[INFO] 2025-07-08T10:27:41.206Z - Skipping item 68665df26cb1fdaa1912c719 - no image field found
+[INFO] 2025-07-08T10:27:41.206Z - Progress: 110/782 completed
+[STEP] 2025-07-08T10:27:41.206Z - [116/782] Worker 2 processing item 68665df2f914ddd27fda463c
+[INFO] 2025-07-08T10:27:41.206Z - Processing item: 68665df2f914ddd27fda463c
+  → {
+  "name": "Barcelona: Montserrat Tour, Monastery & Optional Wine/Lunch",
+  "slug": "barcelona-montserrat-tour-monastery-optional-wine-lunch"
+}
+[INFO] 2025-07-08T10:27:41.206Z - Skipping item 68665df2f914ddd27fda463c - no image field found
+[STEP] 2025-07-08T10:27:41.206Z - [117/782] Worker 3 processing item 68665df2030f5cf6993b8e97
+[INFO] 2025-07-08T10:27:41.206Z - Processing item: 68665df2030f5cf6993b8e97
+  → {
+  "name": "Barcelona: Ghosts and Legends Tour",
+  "slug": "barcelona-ghosts-and-legends-tour"
+}
+[INFO] 2025-07-08T10:27:41.206Z - Skipping item 68665df2030f5cf6993b8e97 - no image field found
+[STEP] 2025-07-08T10:27:41.206Z - [118/782] Worker 4 processing item 68665df23e7c062601387638
+[INFO] 2025-07-08T10:27:41.206Z - Processing item: 68665df23e7c062601387638
+  → {
+  "name": "Barcelona: Sailing Cruise and Vineyard Visit with Tasting",
+  "slug": "barcelona-sailing-cruise-and-vineyard-visit-with-tasting"
+}
+[INFO] 2025-07-08T10:27:41.206Z - Skipping item 68665df23e7c062601387638 - no image field found
+[STEP] 2025-07-08T10:27:41.206Z - [119/782] Worker 5 processing item 68665df2c08afc61dee3e441
+[INFO] 2025-07-08T10:27:41.206Z - Processing item: 68665df2c08afc61dee3e441
+  → {
+  "name": "Barcelona: La Pedrera Sunrise Guided Tour",
+  "slug": "barcelona-la-pedrera-sunrise-guided-tour"
+}
+[INFO] 2025-07-08T10:27:41.207Z - Skipping item 68665df2c08afc61dee3e441 - no image field found
+[STEP] 2025-07-08T10:27:41.207Z - [120/782] Worker 6 processing item 68665df21c6bf3886a625880
+[INFO] 2025-07-08T10:27:41.207Z - Processing item: 68665df21c6bf3886a625880
+  → {
+  "name": "Amsterdam: Cultural Inner City Tour in German or English",
+  "slug": "amsterdam-cultural-inner-city-tour-in-german-or-english"
+}
+[INFO] 2025-07-08T10:27:41.207Z - Skipping item 68665df21c6bf3886a625880 - no image field found
+[STEP] 2025-07-08T10:27:41.207Z - [121/782] Worker 1 processing item 68665df236c5a127f1424d0f
+[INFO] 2025-07-08T10:27:41.207Z - Processing item: 68665df236c5a127f1424d0f
+  → {
+  "name": "Amsterdam: Johan Cruijff ArenA Tour with Optional Guide",
+  "slug": "amsterdam-johan-cruijff-arena-tour-with-optional-guide"
+}
+[INFO] 2025-07-08T10:27:41.207Z - Skipping item 68665df236c5a127f1424d0f - no image field found
+[STEP] 2025-07-08T10:27:41.207Z - [122/782] Worker 2 processing item 68665df25106529ba420ae1d
+[INFO] 2025-07-08T10:27:41.207Z - Processing item: 68665df25106529ba420ae1d
+  → {
+  "name": "Amsterdam: House of Bols Experience and Cocktail Workshop",
+  "slug": "amsterdam-house-of-bols-experience-and-cocktail-workshop"
+}
+[INFO] 2025-07-08T10:27:41.207Z - Skipping item 68665df25106529ba420ae1d - no image field found
+[STEP] 2025-07-08T10:27:41.207Z - [123/782] Worker 3 processing item 68665df12180513846d3da73
+[INFO] 2025-07-08T10:27:41.207Z - Processing item: 68665df12180513846d3da73
+  → {
+  "name": "Amsterdam: Zaanse Schans, Edam, Volendam & Marken Bus Tour",
+  "slug": "amsterdam-zaanse-schans-edam-volendam-marken-bus-tour"
+}
+[INFO] 2025-07-08T10:27:41.207Z - Skipping item 68665df12180513846d3da73 - no image field found
+[STEP] 2025-07-08T10:27:41.207Z - [124/782] Worker 4 processing item 68665df1aae54dc9794800d5
+[INFO] 2025-07-08T10:27:41.207Z - Processing item: 68665df1aae54dc9794800d5
+  → {
+  "name": "Amsterdam: Life of Anne Frank and World War II Walking Tour",
+  "slug": "amsterdam-life-of-anne-frank-and-world-war-ii-walking-tour"
+}
+[INFO] 2025-07-08T10:27:41.207Z - Skipping item 68665df1aae54dc9794800d5 - no image field found
+[STEP] 2025-07-08T10:27:41.207Z - [125/782] Worker 5 processing item 68640fbf1601540112454f8e
+[INFO] 2025-07-08T10:27:41.207Z - Processing item: 68640fbf1601540112454f8e
+  → {
+  "name": "Rome must-dos and day trips, tried and tested by Techie",
+  "slug": "rome-must-dos-and-day-trips-tried-and-tested-by-techie"
+}
+[INFO] 2025-07-08T10:27:41.207Z - Processing image for item 68640fbf1601540112454f8e
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf999b501cba29294a97c_7kz34vri3PngIpHFl1AmGP6uIKbUfNqj3BZoT5RWJc87Mr1S.avif",
+  "field": "image",
+  "itemName": "Rome must-dos and day trips, tried and tested by Techie"
+}
+[INFO] 2025-07-08T10:27:41.209Z - Progress: 120/782 completed
+[STEP] 2025-07-08T10:27:41.209Z - [126/782] Worker 6 processing item 68640fbe9572bff9e1e15dc3
+[INFO] 2025-07-08T10:27:41.209Z - Processing item: 68640fbe9572bff9e1e15dc3
+  → {
+  "name": "Broadway, day trips, and more: @TwoMakeTravel’s NYC must-dos",
+  "slug": "broadway-day-trips-and-more-twomaketravels-nyc-must-dos"
+}
+[INFO] 2025-07-08T10:27:41.209Z - Skipping item 68640fbe9572bff9e1e15dc3 - no image field found
+[STEP] 2025-07-08T10:27:41.209Z - [127/782] Worker 1 processing item 68640fbe412b3e02b747bfec
+[INFO] 2025-07-08T10:27:41.209Z - Processing item: 68640fbe412b3e02b747bfec
+  → {
+  "name": "Experience NYC’s most iconic landmarks like @loving_newyork",
+  "slug": "experience-nycs-most-iconic-landmarks-like-loving-newyork"
+}
+[INFO] 2025-07-08T10:27:41.209Z - Processing image for item 68640fbe412b3e02b747bfec
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf990a3006e8380c9eec2_7kz34vri3Pngio92jBWIh8GxFpdENMWBwV2kLf1cgZjJDUrO.avif",
+  "field": "image",
+  "itemName": "Experience NYC’s most iconic landmarks like @loving_newyork"
+}
+[STEP] 2025-07-08T10:27:41.209Z - [128/782] Worker 2 processing item 68640fbef32fe6164e585c60
+[INFO] 2025-07-08T10:27:41.209Z - Processing image for item 68640fbef32fe6164e585c60
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf999961c36346304421c_7kz34vri3Pngfa5ohJHIlSDHZV95NTKg3MiubRqkJjsG4tXU.avif",
+  "field": "image",
+  "itemName": "Sunset to speakeasy: @call.it.a.holiday’s top New York picks"
+}
+[INFO] 2025-07-08T10:27:41.209Z - Processing item: 68640fbef32fe6164e585c60
+  → {
+  "name": "Sunset to speakeasy: @call.it.a.holiday’s top New York picks",
+  "slug": "sunset-to-speakeasy-call-it-a-holidays-top-new-york-picks"
+}
+[STEP] 2025-07-08T10:27:41.210Z - [129/782] Worker 3 processing item 68640fbd21295913dcbf4be0
+[INFO] 2025-07-08T10:27:41.210Z - Processing item: 68640fbd21295913dcbf4be0
+  → {
+  "name": "Eva and Mehdi choose their top tickets for iconic NYC views",
+  "slug": "eva-and-mehdi-choose-their-top-tickets-for-iconic-nyc-views"
+}
+[INFO] 2025-07-08T10:27:41.210Z - Processing image for item 68640fbd21295913dcbf4be0
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9998424b56bf80446ff_7kz34vri3PngZovMHVFmpACI78YFlPyDjnU3tgXh0buTKkEJ.avif",
+  "field": "image",
+  "itemName": "Eva and Mehdi choose their top tickets for iconic NYC views"
+}
+[STEP] 2025-07-08T10:27:41.210Z - [130/782] Worker 4 processing item 68640fbde14c35e753dc1c5d
+[INFO] 2025-07-08T10:27:41.210Z - Processing item: 68640fbde14c35e753dc1c5d
+  → {
+  "name": "Discover Dionne’s most-loved Marrakesh desert adventures",
+  "slug": "discover-dionnes-most-loved-marrakesh-desert-adventures"
+}
+[INFO] 2025-07-08T10:27:41.210Z - Processing image for item 68640fbde14c35e753dc1c5d
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf999066196af59c7e9c5_7kz34vri3PngQgQhKh4Ae4p1h7POrBocugXyIqDtN5WRsakQ.avif",
+  "field": "image",
+  "itemName": "Discover Dionne’s most-loved Marrakesh desert adventures"
+}
+[STEP] 2025-07-08T10:27:41.211Z - [131/782] Worker 6 processing item 68640fbd89caee7cb9b77f56
+[INFO] 2025-07-08T10:27:41.211Z - Processing image for item 68640fbd89caee7cb9b77f56
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9998154eeb2a4df587d_7kz34vri3PngIppoRHJmGP6uIKbUfNqj3BZoT5RWJc87Mr1S.avif",
+  "field": "image",
+  "itemName": "All-out fun: Emilia’s favorite Marrakesh activities"
+}
+[INFO] 2025-07-08T10:27:41.211Z - Processing item: 68640fbd89caee7cb9b77f56
+  → {
+  "name": "All-out fun: Emilia’s favorite Marrakesh activities",
+  "slug": "all-out-fun-emilias-favorite-marrakesh-activities"
+}
+[INFO] 2025-07-08T10:27:41.292Z - Downloaded image: 68 KB
+[INFO] 2025-07-08T10:27:41.311Z - Downloaded image: 81 KB
+[INFO] 2025-07-08T10:27:41.335Z - Downloaded image: 112 KB
+[INFO] 2025-07-08T10:27:41.354Z - Downloaded image: 156 KB
+[INFO] 2025-07-08T10:27:41.354Z - Downloaded image: 127 KB
+[INFO] 2025-07-08T10:27:41.376Z - Downloaded image: 486 KB
+[INFO] 2025-07-08T10:27:47.885Z - Image compressed successfully
+  → {
+  "originalSize": 112,
+  "compressedSize": 112,
+  "compressionRatio": 1,
+  "sizeReduction": "0%"
+}
+[INFO] 2025-07-08T10:27:48.314Z - Image compressed successfully
+  → {
+  "originalSize": 81,
+  "compressedSize": 81,
+  "compressionRatio": 1,
+  "sizeReduction": "0%"
+}
+[INFO] 2025-07-08T10:27:49.305Z - Image compressed successfully
+  → {
+  "originalSize": 156,
+  "compressedSize": 156,
+  "compressionRatio": 1,
+  "sizeReduction": "0%"
+}
+[INFO] 2025-07-08T10:27:49.432Z - Image compressed successfully
+  → {
+  "originalSize": 127,
+  "compressedSize": 127,
+  "compressionRatio": 1,
+  "sizeReduction": "0%"
+}
+[SUCCESS] 2025-07-08T10:27:49.936Z - Uploaded to UploadThing
+  → {
+  "url": "https://utfs.io/f/7kz34vri3PngMzC7bL0ixET1Slmr2s3qVGaZbHK5JOW0Xnj8",
+  "key": "7kz34vri3PngMzC7bL0ixET1Slmr2s3qVGaZbHK5JOW0Xnj8"
+}
+[SUCCESS] 2025-07-08T10:27:49.978Z - Uploaded to UploadThing
+  → {
+  "url": "https://utfs.io/f/7kz34vri3PnghLAW879mFdfwXKec8I1g6BqnRu5L7SrxU24l",
+  "key": "7kz34vri3PnghLAW879mFdfwXKec8I1g6BqnRu5L7SrxU24l"
+}
+[SUCCESS] 2025-07-08T10:27:50.448Z - Uploaded to UploadThing
+  → {
+  "url": "https://utfs.io/f/7kz34vri3PngmwQQYgrdnJVequax5U0YXLC2T7zbQZRoMj8G",
+  "key": "7kz34vri3PngmwQQYgrdnJVequax5U0YXLC2T7zbQZRoMj8G"
+}
+[SUCCESS] 2025-07-08T10:27:50.592Z - Uploaded to UploadThing
+  → {
+  "url": "https://utfs.io/f/7kz34vri3PngjqIOV6b5yS2quFkpQiP1s0hHveZtJcaBzLMg",
+  "key": "7kz34vri3PngjqIOV6b5yS2quFkpQiP1s0hHveZtJcaBzLMg"
+}
+[SUCCESS] 2025-07-08T10:27:51.298Z - Updated CMS item 68640fbd21295913dcbf4be0 with compressed image
+[SUCCESS] 2025-07-08T10:27:51.298Z - Successfully processed item 68640fbd21295913dcbf4be0
+[STEP] 2025-07-08T10:27:51.298Z - [132/782] Worker 3 processing item 68640fbdb4815e782fd4a4e2
+[INFO] 2025-07-08T10:27:51.298Z - Processing item: 68640fbdb4815e782fd4a4e2
+  → {
+  "name": "Food, history, and epic views: Márcia’s New York favorites",
+  "slug": "food-history-and-epic-views-marcias-new-york-favorites"
+}
+[INFO] 2025-07-08T10:27:51.298Z - Processing image for item 68640fbdb4815e782fd4a4e2
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9994588d7e616fe03f6_7kz34vri3PngVwKGPGZZP1eSX7ij5LEwQsIkKHUF6CBDOVWn.avif",
+  "field": "image",
+  "itemName": "Food, history, and epic views: Márcia’s New York favorites"
+}
+[SUCCESS] 2025-07-08T10:27:51.356Z - Successfully processed item 68640fbd89caee7cb9b77f56
+[SUCCESS] 2025-07-08T10:27:51.356Z - Updated CMS item 68640fbd89caee7cb9b77f56 with compressed image
+[STEP] 2025-07-08T10:27:51.356Z - [133/782] Worker 6 processing item 68640fbdd1cdcfc77cef369c
+[INFO] 2025-07-08T10:27:51.356Z - Processing item: 68640fbdd1cdcfc77cef369c
+  → {
+  "name": "@PlanVoyageRepeat’s favorite Marrakesh day trips and more",
+  "slug": "planvoyagerepeats-favorite-marrakesh-day-trips-and-more"
+}
+[INFO] 2025-07-08T10:27:51.356Z - Processing image for item 68640fbdd1cdcfc77cef369c
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9a63f31764a171f9703_7kz34vri3PngHc0wYdtM4YvflV8P9bTKGc1rQA5IewXdHiM2.avif",
+  "field": "image",
+  "itemName": "@PlanVoyageRepeat’s favorite Marrakesh day trips and more"
+}
+[INFO] 2025-07-08T10:27:51.451Z - Downloaded image: 193 KB
+[INFO] 2025-07-08T10:27:51.477Z - Downloaded image: 257 KB
+[SUCCESS] 2025-07-08T10:27:51.860Z - Updated CMS item 68640fbf1601540112454f8e with compressed image
+[SUCCESS] 2025-07-08T10:27:51.861Z - Successfully processed item 68640fbf1601540112454f8e
+[STEP] 2025-07-08T10:27:51.861Z - [134/782] Worker 5 processing item 68640fbcb6e4af197bb59e84
+[INFO] 2025-07-08T10:27:51.861Z - Processing item: 68640fbcb6e4af197bb59e84
+  → {
+  "name": "Explore Marrakesh day and night with Marisa’s top picks",
+  "slug": "explore-marrakesh-day-and-night-with-marisas-top-picks"
+}
+[INFO] 2025-07-08T10:27:51.861Z - Processing image for item 68640fbcb6e4af197bb59e84
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9a5eb0ba7f0015880b6_7kz34vri3Pngw7jrpPqs4SIavujZJLRitlQFTh0qDxWf7UEp.avif",
+  "field": "image",
+  "itemName": "Explore Marrakesh day and night with Marisa’s top picks"
+}
+[INFO] 2025-07-08T10:27:51.935Z - Downloaded image: 72 KB
+[SUCCESS] 2025-07-08T10:27:52.121Z - Updated CMS item 68640fbef32fe6164e585c60 with compressed image
+[SUCCESS] 2025-07-08T10:27:52.121Z - Successfully processed item 68640fbef32fe6164e585c60
+[STEP] 2025-07-08T10:27:52.121Z - [135/782] Worker 2 processing item 68640fbc07c39ee524e3ba50
+[INFO] 2025-07-08T10:27:52.121Z - Processing item: 68640fbc07c39ee524e3ba50
+  → {
+  "name": "May handpicks Marrakesh must-dos for fun, culture, and food",
+  "slug": "may-handpicks-marrakesh-must-dos-for-fun-culture-and-food"
+}
+[INFO] 2025-07-08T10:27:52.121Z - Processing image for item 68640fbc07c39ee524e3ba50
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9a530912fce6623f103_7kz34vri3Png9dKkCSY6XTaMYnGPLh5VADj8WtBszEZpQdkx.avif",
+  "field": "image",
+  "itemName": "May handpicks Marrakesh must-dos for fun, culture, and food"
+}
+[INFO] 2025-07-08T10:27:52.184Z - Downloaded image: 103 KB
+[INFO] 2025-07-08T10:27:55.256Z - Image compressed successfully
+  → {
+  "originalSize": 486,
+  "compressedSize": 201,
+  "compressionRatio": 2.42,
+  "sizeReduction": "59%"
+}
+[INFO] 2025-07-08T10:27:55.651Z - Image compressed successfully
+  → {
+  "originalSize": 68,
+  "compressedSize": 68,
+  "compressionRatio": 1,
+  "sizeReduction": "0%"
+}
+[INFO] 2025-07-08T10:27:57.546Z - Image compressed successfully
+  → {
+  "originalSize": 193,
+  "compressedSize": 193,
+  "compressionRatio": 1,
+  "sizeReduction": "0%"
+}
+[INFO] 2025-07-08T10:27:57.630Z - Image compressed successfully
+  → {
+  "originalSize": 72,
+  "compressedSize": 72,
+  "compressionRatio": 1,
+  "sizeReduction": "0%"
+}
+[SUCCESS] 2025-07-08T10:27:58.015Z - Uploaded to UploadThing
+  → {
+  "url": "https://utfs.io/f/7kz34vri3PngDjvfxsEb0UX6vCrBuwn3ZhAFJsaoqDexmN19",
+  "key": "7kz34vri3PngDjvfxsEb0UX6vCrBuwn3ZhAFJsaoqDexmN19"
+}
+[INFO] 2025-07-08T10:27:58.032Z - Image compressed successfully
+  → {
+  "originalSize": 103,
+  "compressedSize": 103,
+  "compressionRatio": 1,
+  "sizeReduction": "0%"
+}
+[SUCCESS] 2025-07-08T10:27:58.065Z - Uploaded to UploadThing
+  → {
+  "url": "https://utfs.io/f/7kz34vri3Png8d8a0EzRNpcm58eOsL03t9UMnbTvW4X1KJfS",
+  "key": "7kz34vri3Png8d8a0EzRNpcm58eOsL03t9UMnbTvW4X1KJfS"
+}
+[INFO] 2025-07-08T10:27:58.904Z - Image compressed successfully
+  → {
+  "originalSize": 257,
+  "compressedSize": 257,
+  "compressionRatio": 1,
+  "sizeReduction": "0%"
+}
+[SUCCESS] 2025-07-08T10:27:58.917Z - Uploaded to UploadThing
+  → {
+  "url": "https://utfs.io/f/7kz34vri3PngDa2UpDEb0UX6vCrBuwn3ZhAFJsaoqDexmN19",
+  "key": "7kz34vri3PngDa2UpDEb0UX6vCrBuwn3ZhAFJsaoqDexmN19"
+}
+[SUCCESS] 2025-07-08T10:27:59.022Z - Uploaded to UploadThing
+  → {
+  "url": "https://utfs.io/f/7kz34vri3PngVgHbuPZZP1eSX7ij5LEwQsIkKHUF6CBDOVWn",
+  "key": "7kz34vri3PngVgHbuPZZP1eSX7ij5LEwQsIkKHUF6CBDOVWn"
+}
+[SUCCESS] 2025-07-08T10:27:59.280Z - Updated CMS item 68640fbe412b3e02b747bfec with compressed image
+[SUCCESS] 2025-07-08T10:27:59.280Z - Successfully processed item 68640fbe412b3e02b747bfec
+[INFO] 2025-07-08T10:27:59.280Z - Processing item: 68640fbcb071eae07be49879
+  → {
+  "name": "Gaby and Yeyo’s Dubai picks for food, thrills, and more",
+  "slug": "gaby-and-yeyos-dubai-picks-for-food-thrills-and-more"
+}
+[STEP] 2025-07-08T10:27:59.280Z - [136/782] Worker 1 processing item 68640fbcb071eae07be49879
+[INFO] 2025-07-08T10:27:59.280Z - Processing image for item 68640fbcb071eae07be49879
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9af4588d7e616fe0922_7kz34vri3Png0ZCNbBcugeqU5HPx9coSbstdFmNz368j2pyZ.avif",
+  "field": "image",
+  "itemName": "Gaby and Yeyo’s Dubai picks for food, thrills, and more"
+}
+[INFO] 2025-07-08T10:27:59.357Z - Downloaded image: 36 KB
+[SUCCESS] 2025-07-08T10:27:59.773Z - Updated CMS item 68640fbde14c35e753dc1c5d with compressed image
+[STEP] 2025-07-08T10:27:59.773Z - [137/782] Worker 4 processing item 68640fbcb25d56b4052cef3b
+[INFO] 2025-07-08T10:27:59.773Z - Progress: 130/782 completed
+[INFO] 2025-07-08T10:27:59.773Z - Processing item: 68640fbcb25d56b4052cef3b
+  → {
+  "name": "High speeds to high views, Sleepyexplorer’s Dubai favorites",
+  "slug": "high-speeds-to-high-views-sleepyexplorers-dubai-favorites"
+}
+[SUCCESS] 2025-07-08T10:27:59.773Z - Successfully processed item 68640fbde14c35e753dc1c5d
+[INFO] 2025-07-08T10:27:59.774Z - Processing image for item 68640fbcb25d56b4052cef3b
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9a58e73e5e9b21cddda_7kz34vri3PngF17l1jsFKsH4BoQbVm6PuAXqxywGSrpt92iv.avif",
+  "field": "image",
+  "itemName": "High speeds to high views, Sleepyexplorer’s Dubai favorites"
+}
+[INFO] 2025-07-08T10:27:59.933Z - Downloaded image: 203 KB
+[SUCCESS] 2025-07-08T10:28:00.485Z - Updated CMS item 68640fbcb6e4af197bb59e84 with compressed image
+[SUCCESS] 2025-07-08T10:28:00.485Z - Successfully processed item 68640fbcb6e4af197bb59e84
+[STEP] 2025-07-08T10:28:00.485Z - [138/782] Worker 5 processing item 68640fbc12297be42106048c
+[INFO] 2025-07-08T10:28:00.485Z - Processing item: 68640fbc12297be42106048c
+  → {
+  "name": "Hidden Smile’s Dubai must-dos for a fun trip",
+  "slug": "hidden-smiles-dubai-must-dos-for-a-fun-trip"
+}
+[INFO] 2025-07-08T10:28:00.485Z - Processing image for item 68640fbc12297be42106048c
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9a5b9d7d602efbf703f_7kz34vri3Pngn9MuCeItLkjYiyXMcgIdBxP4FJCEZ6sev3p7.avif",
+  "field": "image",
+  "itemName": "Hidden Smile’s Dubai must-dos for a fun trip"
+}
+[INFO] 2025-07-08T10:28:00.523Z - Downloaded image: 101 KB
+[SUCCESS] 2025-07-08T10:28:00.585Z - Updated CMS item 68640fbc07c39ee524e3ba50 with compressed image
+[SUCCESS] 2025-07-08T10:28:00.585Z - Successfully processed item 68640fbc07c39ee524e3ba50
+[STEP] 2025-07-08T10:28:00.585Z - [139/782] Worker 2 processing item 68640fbc9065a1ba1351c994
+[INFO] 2025-07-08T10:28:00.585Z - Processing item: 68640fbc9065a1ba1351c994
+  → {
+  "name": "Namolinah’s top activities for fun, food, and views in Dubai",
+  "slug": "namolinahs-top-activities-for-fun-food-and-views-in-dubai"
+}
+[INFO] 2025-07-08T10:28:00.585Z - Processing image for item 68640fbc9065a1ba1351c994
+  → {
+  "imageUrl": "https://cdn.prod.website-files.com/6855658fef28d7818b1ddc6b/686bf9afa3006e8380c9fc32_7kz34vri3PngTCfaFz1PXDKSQMIlw3cgbfBakP2ZUONidzLE.avif",
+  "field": "image",
+  "itemName": "Namolinah’s top activities for fun, food, and views in Dubai"
+}
+[INFO] 2025-07-08T10:28:00.623Z - Downloaded image: 97 KB
+[SUCCESS] 2025-07-08T10:28:02.735Z - Uploaded to UploadThing
+  → {
+  "url": "https://utfs.io/f/7kz34vri3Png401ZcdL6AhPJDZMSzrclsG17UqCQXxRg2fbB",
+  "key": "7kz34vri3Png401ZcdL6AhPJDZMSzrclsG17UqCQXxRg2fbB"
+}
