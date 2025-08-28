@@ -84,8 +84,21 @@ export async function processImageField(
     const filename = `${item.id}-${imageFieldName}-optimized.avif`;
     const uploadResult = await uploader.upload(compressedBuffer, filename, 'image/avif');
     logger.success(`Uploaded image`, { url: uploadResult.url, key: uploadResult.key });
+
     await cms.updateItemImage(item.id, imageFieldName, uploadResult.url);
     logger.success(`Updated CMS item ${item.id} with compressed image`);
+
+    // Best-effort cleanup of temporary upload after Webflow copies it
+    try {
+      await uploader.delete(uploadResult.key);
+      logger.info(`Deleted temporary uploadthing file`, { key: uploadResult.key });
+    } catch (cleanupError) {
+      logger.warn(`Failed to delete temporary uploadthing file`, {
+        key: uploadResult.key,
+        error: (cleanupError as Error)?.message || cleanupError,
+      });
+    }
+
     stats.incrementSuccess();
     return true;
   } catch (error) {

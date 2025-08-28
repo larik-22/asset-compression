@@ -75,11 +75,11 @@ const appConfigObj: AppConfig = {
   concurrency: parseNumber(process.env.CONCURRENCY, 6),
   compression: {
     targetRatio: parseFloatNumber(process.env.COMPRESSION_TARGET_RATIO, 0.5),
-    quality: parseNumber(process.env.COMPRESSION_QUALITY, 95),
-    minQuality: parseNumber(process.env.COMPRESSION_MIN_QUALITY, 80),
+    quality: parseNumber(process.env.COMPRESSION_QUALITY, 60),
+    minQuality: parseNumber(process.env.COMPRESSION_MIN_QUALITY, 55),
     minSSIM: parseFloatNumber(process.env.COMPRESSION_MIN_SSIM, 0.98),
-    maxDimension: parseNumber(process.env.COMPRESSION_MAX_DIMENSION, 1000),
-  },
+    maxDimension: parseNumber(process.env.COMPRESSION_MAX_DIMENSION, 650),
+  }, 
 };
 
 export const appConfig: Readonly<AppConfig> = deepFreeze(appConfigObj);

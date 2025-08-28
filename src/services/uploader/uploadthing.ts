@@ -23,6 +23,10 @@ export class UploadThingClient implements UploaderClient {
 
     return { url: response.data.url, key: response.data.key };
   }
+
+  async delete(key: string): Promise<void> {
+    await this.utapi.deleteFiles(key);
+  }
 }
 
 

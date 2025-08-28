@@ -1,110 +1,170 @@
-import { compressImageSmart } from './utils/image.js';
-import { promises as fs } from 'node:fs';
-import { logger } from './utils/logger.js';
-import { getCmsClient } from './services/cms/index.js';
+import { config as loadDotenv } from 'dotenv';
+loadDotenv();
 
-async function processImageField(
-  item: any,
-  imageFieldName: string,
-  imageUrl: string,
-): Promise<void> {
-  logger.info(`Processing image for item ${item.id}`, { imageUrl, field: imageFieldName });
+import appConfig from '@/config.js';
+import { runImageOptimizationPipeline } from '@/core/pipeline.js';
+import { StatsTracker } from '@/core/stats.js';
+import { logger } from '@utils/logger.js';
+import { getCmsClient } from '@services/cms/index.js';
+import type { CmsClient, CmsItem } from '@services/cms/types.js';
+import { getUploaderClient } from '@services/uploader/index.js';
+import type { UploaderClient, UploadResult } from '@services/uploader/types.js';
 
-  try {
-    // 1. Download the original image
-    const response = await fetch(imageUrl);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch image: ${response.status}`);
+// --- Playground configuration ---
+// Limit how many CMS items to process (default 1)
+const TEST_LIMIT = Number(process.env.TEST_LIMIT ?? '1');
+
+// Simulate specific failure scenarios on the first items in order.
+// Provide a comma-separated list from: download,compression,upload,cms,delete
+// Example: SIMULATE=download,compression,upload
+const SIMULATE: string[] = (process.env.SIMULATE ?? '')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean);
+
+type Scenario = 'download' | 'compression' | 'upload' | 'cms' | 'delete' | 'none';
+
+function buildScenarioMap(items: CmsItem[]): Map<string, Scenario> {
+  const map = new Map<string, Scenario>();
+  items.forEach((item, idx) => {
+    const scenario = (SIMULATE[idx] as Scenario) ?? 'none';
+    map.set(item.id, scenario);
+  });
+  return map;
+}
+
+// Wrap global fetch to respond to simulate:// URLs
+function installFetchSimulator(): () => void {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = (async (input: any, init?: any) => {
+    const url = typeof input === 'string' ? input : input?.url;
+    if (typeof url === 'string' && url.startsWith('simulate://')) {
+      const kind = url.slice('simulate://'.length);
+      if (kind === 'download-error') {
+        throw new Error('Simulated download error');
+      }
+      if (kind === 'compression-error') {
+        // Return a successful response with non-image content
+        const text = 'this is not an image';
+        return new Response(text, {
+          status: 200,
+          headers: { 'Content-Type': 'text/plain' },
+        });
+      }
     }
-    const originalBuffer = Buffer.from(await response.arrayBuffer());
-    const originalSize = originalBuffer.length;
+    return originalFetch(input as any, init);
+  }) as typeof fetch;
+  return () => {
+    globalThis.fetch = originalFetch;
+  };
+}
 
-    // save original image
-    await fs.writeFile(`public/${item.id}-${imageFieldName}-original.jpg`, originalBuffer);
+class PlaygroundCmsClient implements CmsClient {
+  private readonly base: CmsClient;
+  private readonly imageFieldNames: string[];
+  private readonly scenarioByItemId: Map<string, Scenario> = new Map();
 
-    // 2. Compress the image
-    const compressedBuffer = await compressImageSmart(originalBuffer, {
-      targetRatio: 0.5,
-      quality: 95,
-      minQuality: 80,
-      minSSIM: 0.98,
-      maxDimension: 1000,
+  constructor(base: CmsClient, imageFieldNames: string[]) {
+    this.base = base;
+    this.imageFieldNames = imageFieldNames;
+  }
+
+  async fetchAllItems(): Promise<CmsItem[]> {
+    const all = await this.base.fetchAllItems();
+    const limited = all.slice(0, Math.max(0, TEST_LIMIT));
+    const mapped = limited.map((item) => ({ ...item, fieldData: { ...(item.fieldData ?? {}) } }));
+
+    // Build deterministic scenario map for limited items
+    const scenarioMap = buildScenarioMap(mapped);
+    for (const it of mapped) {
+      const scenario = scenarioMap.get(it.id) ?? 'none';
+      this.scenarioByItemId.set(it.id, scenario);
+      if (scenario === 'download') {
+        for (const fieldName of this.imageFieldNames) {
+          if ((it.fieldData as any)?.[fieldName]) {
+            (it.fieldData as any)[fieldName] = 'simulate://download-error';
+          }
+        }
+      }
+      if (scenario === 'compression') {
+        for (const fieldName of this.imageFieldNames) {
+          if ((it.fieldData as any)?.[fieldName]) {
+            (it.fieldData as any)[fieldName] = 'simulate://compression-error';
+          }
+        }
+      }
+    }
+    logger.info('Playground: prepared items', {
+      limit: TEST_LIMIT,
+      scenarios: Array.from(this.scenarioByItemId.entries()),
     });
+    return mapped;
+  }
 
-    const compressionRatio = originalSize / compressedBuffer.length;
-    logger.info(`Image compressed`, {
-      originalSize: Math.round(originalSize / 1024),
-      compressedSize: Math.round(compressedBuffer.length / 1024),
-      compressionRatio: Math.round(compressionRatio * 100) / 100,
-    });
+  async updateItemImage(itemId: string, fieldName: string, imageUrl: string): Promise<void> {
+    const scenario = this.scenarioByItemId.get(itemId) ?? 'none';
+    if (scenario === 'cms') {
+      throw new Error('Simulated CMS update error');
+    }
+    return this.base.updateItemImage(itemId, fieldName, imageUrl);
+  }
+}
 
-    await fs.writeFile(`public/${item.id}-${imageFieldName}-compressed.avif`, compressedBuffer);
+class PlaygroundUploaderClient implements UploaderClient {
+  private readonly base: UploaderClient;
+  private readonly scenarioByItemId: Map<string, Scenario>;
+  private readonly keyToItemId: Map<string, string> = new Map();
 
-    logger.success(`Compressed image written for item ${item.id}`);
-  } catch (error) {
-    logger.error(`Failed to process image for item ${item.id}`, error);
+  constructor(base: UploaderClient, scenarioByItemId: Map<string, Scenario>) {
+    this.base = base;
+    this.scenarioByItemId = scenarioByItemId;
+  }
+
+  async upload(buffer: Buffer, fileName: string, contentType?: string): Promise<UploadResult> {
+    const itemId = String(fileName).split('-')[0] || '';
+    const scenario = this.scenarioByItemId.get(itemId) ?? 'none';
+    if (scenario === 'upload') {
+      throw new Error('Simulated upload error');
+    }
+    const res = await this.base.upload(buffer, fileName, contentType);
+    this.keyToItemId.set(res.key, itemId);
+    return res;
+  }
+
+  async delete(key: string): Promise<void> {
+    const itemId = this.keyToItemId.get(key) ?? '';
+    const scenario = this.scenarioByItemId.get(itemId) ?? 'none';
+    if (scenario === 'delete') {
+      throw new Error('Simulated delete error');
+    }
+    return this.base.delete(key);
   }
 }
 
 async function main(): Promise<void> {
-  logger.info('Starting image compression flow test');
+  logger.info('Playground test starting');
 
+  const removeFetchSim = installFetchSimulator();
   try {
-    const cms = getCmsClient();
+    const imageFieldNames = appConfig.imageFieldNames;
 
-    // Use specific item IDs that we know have images
-    const targetItemIds = [
-      '685eab65aa5563bffb4f8fc9', // "Explore the top things to do in Testaccio, Rome"
-      '685eab6548ab3a68015c1c9a', // "The best neighborhoods in Rome, from Trastevere to Testaccio"
-      '685eab6403fcee3fd17e683f', // "Rome in fall: 8 best attractions and activities"
-    ];
+    const realCms = getCmsClient();
+    const playgroundCms = new PlaygroundCmsClient(realCms, imageFieldNames);
 
-    logger.info(`Looking for ${targetItemIds.length} specific items with images`);
+    // Fetch once to derive scenario map for uploader wrapper
+    const items = await playgroundCms.fetchAllItems();
+    const scenarioByItemId = buildScenarioMap(items);
 
-    // Fetch all items and find our targets
-    const allItems: any[] = await cms.fetchAllItems();
-    const foundItems: any[] = targetItemIds
-      .map((id) => allItems.find((i) => i.id === id))
-      .filter(Boolean);
+    const realUploader = getUploaderClient();
+    const playgroundUploader = new PlaygroundUploaderClient(realUploader, scenarioByItemId);
 
-    if (foundItems.length === 0) {
-      logger.warn('No target items found with images');
-      return;
-    }
-
-    logger.info(`Found ${foundItems.length} items to process`);
-
-    for (const [index, item] of foundItems.entries()) {
-      logger.step(index + 1, foundItems.length, `Processing item ${item.id}`);
-
-      try {
-        // Log item structure for debugging
-        logger.info('Item structure', {
-          id: item.id,
-          name: item.fieldData?.name,
-          hasImage: !!item.fieldData?.image,
-          imageUrl: (item.fieldData?.image as any)?.url || item.fieldData?.image,
-          imageObject: item
-        });
-
-        // Process the 'image' field
-        const imageField = item.fieldData?.image as any;
-        const imageUrl = typeof imageField === 'string' ? imageField : imageField?.url;
-
-        if (imageUrl) {
-          await processImageField(item, 'image', imageUrl);
-        } else {
-          logger.warn(`No image URL found for item ${item.id}`);
-        }
-      } catch (error) {
-        logger.error(`Failed to process item ${item.id}`, error);
-      }
-    }
-
-    logger.success('Image compression flow test completed');
-  } catch (error) {
-    logger.error('Test failed', error);
-    throw error;
+    const stats = new StatsTracker();
+    await runImageOptimizationPipeline(imageFieldNames, playgroundCms, playgroundUploader, stats);
+  } catch (err) {
+    logger.error('Playground test failed', err);
+    throw err;
+  } finally {
+    removeFetchSim();
   }
 }
 

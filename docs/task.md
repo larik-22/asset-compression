@@ -83,19 +83,12 @@ Here are the key enhancements I suggest.
 ---
 
 
-### **Step 7: 🧹 Automate Asset Cleanup**
-
-The script currently uploads new images but never deletes the old, now-unused images from your external storage (UploadThing). This can lead to unnecessary storage costs and clutter.
+### **Step 7: Automate Asset Cleanup**
+**Overview:** The plan is to use UploadThing as a short-term host for the compressed image. Webflow will fetch the image from the temporary UploadThing URL to create its own permanently stored asset. Once Webflow has successfully copied the image, the temporary file on UploadThing is no longer needed and should be deleted immediately.
 
 * **Why:** Automated cleanup keeps your storage optimized and reduces costs by ensuring you only store the assets that are actively in use.
-* **How to Implement:**
-    1.  **Enhance Uploader Service:** Add a `delete` method to your `UploaderClient` interface. The `UTApi` from UploadThing supports file deletion, so you can implement this in your `uploadthing.ts` client.
-    2.  **Extract Key from URL:** The `uploadToUploadThing` function returns both a `url` and a `key`. Since you only store the URL in the CMS, you'll need to parse the key from the old image URL before deleting it. UploadThing URLs typically follow a pattern like `https://utfs.io/f/your-file-key`, which is easy to parse.
-    3.  **Update `processImageField`:**
-        * Before compressing, check if the current `imageUrl` is hosted on your UploadThing domain.
-        * If it is, parse the `oldImageKey` from it.
-        * After the new image is uploaded and the CMS item is successfully updated with the new URL, make a final call to `uploaderClient.delete(oldImageKey)`. This ensures you only delete the old asset after the entire process succeeds.
-
+1. Once image is uploaded to UploadThing, if successful, we receive `UploadFileData` object with `key` property 
+2. After uploading to Webflow, we can delete the image from UploadThing using the `key` property. (or multiple keys if multiple images are uploaded)
 ---
 
 ### **Step 8: 🏃‍♂️ Implement a "Dry Run" Mode**
