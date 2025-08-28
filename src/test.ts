@@ -1,18 +1,11 @@
-import { getEnvCollectionItems, updateAndPublishItem } from './services/webflowClient.js';
 import { compressImageSmart } from './utils/image.js';
-import { uploadToUploadThing } from './utils/upload.js';
 import { promises as fs } from 'node:fs';
-import path from 'node:path';
-import { config } from 'dotenv';
 import { logger } from './utils/logger.js';
-import { withRateLimitRetry } from './utils/retry.js';
-
-config();
+import { getCmsClient } from './services/cms/index.js';
 
 async function processImageField(
   item: any,
   imageFieldName: string,
-  collectionId: string,
   imageUrl: string,
 ): Promise<void> {
   logger.info(`Processing image for item ${item.id}`, { imageUrl, field: imageFieldName });
@@ -27,7 +20,7 @@ async function processImageField(
     const originalSize = originalBuffer.length;
 
     // save original image
-    fs.writeFile(`public/${item.id}-${imageFieldName}-original.jpg`, originalBuffer);
+    await fs.writeFile(`public/${item.id}-${imageFieldName}-original.jpg`, originalBuffer);
 
     // 2. Compress the image
     const compressedBuffer = await compressImageSmart(originalBuffer, {
@@ -45,21 +38,9 @@ async function processImageField(
       compressionRatio: Math.round(compressionRatio * 100) / 100,
     });
 
-    fs.writeFile(`public/${item.id}-${imageFieldName}-compressed.avif`, compressedBuffer);
+    await fs.writeFile(`public/${item.id}-${imageFieldName}-compressed.avif`, compressedBuffer);
 
-    // 3. Upload to UploadThing
-    // const filename = `${item.id}-${imageFieldName}-compressed.avif`;
-    // const uploadResult = await uploadToUploadThing(compressedBuffer, filename);
-    // logger.success(`Uploaded to UploadThing`, { url: uploadResult.url });
-
-    // // 4. Update CMS item with new URL
-    // await withRateLimitRetry(() =>
-    //   updateAndPublishItem(collectionId, item.id, {
-    //     [imageFieldName]: uploadResult.url,
-    //   }),
-    // );
-
-    logger.success(`Updated CMS item ${item.id} with compressed image`);
+    logger.success(`Compressed image written for item ${item.id}`);
   } catch (error) {
     logger.error(`Failed to process image for item ${item.id}`, error);
   }
@@ -69,10 +50,7 @@ async function main(): Promise<void> {
   logger.info('Starting image compression flow test');
 
   try {
-    const collectionId = process.env.WEBFLOW_COLLECTION_ID;
-    if (!collectionId) {
-      throw new Error('WEBFLOW_COLLECTION_ID environment variable is required');
-    }
+    const cms = getCmsClient();
 
     // Use specific item IDs that we know have images
     const targetItemIds = [
@@ -83,30 +61,11 @@ async function main(): Promise<void> {
 
     logger.info(`Looking for ${targetItemIds.length} specific items with images`);
 
-    // Fetch items in batches to find our target items
-    const foundItems: any[] = [];
-    let offset = 0;
-    const limit = 100;
-    
-    while (foundItems.length < targetItemIds.length && offset < 300) {
-      const response = await withRateLimitRetry(() => 
-        getEnvCollectionItems({ limit, offset })
-      );
-      
-      const items = response.items || [];
-      
-      // Find any target items in this batch
-      for (const itemId of targetItemIds) {
-        const item = items.find(i => i.id === itemId);
-        if (item && !foundItems.find(f => f.id === itemId)) {
-          foundItems.push(item);
-          logger.info(`Found target item: ${itemId} - ${item.fieldData?.name}`);
-        }
-      }
-      
-      if (items.length < limit) break; // No more items
-      offset += limit;
-    }
+    // Fetch all items and find our targets
+    const allItems: any[] = await cms.fetchAllItems();
+    const foundItems: any[] = targetItemIds
+      .map((id) => allItems.find((i) => i.id === id))
+      .filter(Boolean);
 
     if (foundItems.length === 0) {
       logger.warn('No target items found with images');
@@ -115,24 +74,25 @@ async function main(): Promise<void> {
 
     logger.info(`Found ${foundItems.length} items to process`);
 
-    for (const item of foundItems) {
-      logger.step(foundItems.indexOf(item) + 1, foundItems.length, `Processing item ${item.id}`);
-      
+    for (const [index, item] of foundItems.entries()) {
+      logger.step(index + 1, foundItems.length, `Processing item ${item.id}`);
+
       try {
         // Log item structure for debugging
         logger.info('Item structure', {
           id: item.id,
           name: item.fieldData?.name,
           hasImage: !!item.fieldData?.image,
-          imageUrl: item.fieldData?.image?.url || item.fieldData?.image,
+          imageUrl: (item.fieldData?.image as any)?.url || item.fieldData?.image,
+          imageObject: item
         });
 
         // Process the 'image' field
-        const imageField = item.fieldData?.image;
+        const imageField = item.fieldData?.image as any;
         const imageUrl = typeof imageField === 'string' ? imageField : imageField?.url;
-        
+
         if (imageUrl) {
-          await processImageField(item, 'image', collectionId, imageUrl);
+          await processImageField(item, 'image', imageUrl);
         } else {
           logger.warn(`No image URL found for item ${item.id}`);
         }
@@ -151,5 +111,4 @@ async function main(): Promise<void> {
 main().catch((err) => {
   logger.error('Main process failed', err);
   process.exit(1);
-}); 
-  
+});

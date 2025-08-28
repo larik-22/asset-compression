@@ -8,7 +8,14 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@types/*": ["./src/types/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@scripts/*": ["./src/scripts/*"],
+      "@services/*": ["./src/services/*"],
+    }
   },
   "include": ["src/**/*"]
 } 

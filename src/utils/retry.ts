@@ -1,15 +1,26 @@
 import { logger } from './logger.js';
-import { Webflow } from 'webflow-api';
 
 /**
- * Execute an async function, retrying with exponential back-off if the Webflow API
- * responds with a rate-limit error (HTTP 429).
+ * Execute an async function, retrying with exponential back-off if the provided
+ * predicate determines the error is a rate-limit condition.
  */
 export async function withRateLimitRetry<T>(
   fn: () => Promise<T>,
-  maxRetries = 5,
-  baseDelayMs = 1000,
+  options?: {
+    maxRetries?: number;
+    baseDelayMs?: number;
+    isRateLimitError?: (error: unknown) => boolean;
+  },
 ): Promise<T> {
+  const maxRetries = options?.maxRetries ?? 5;
+  const baseDelayMs = options?.baseDelayMs ?? 1000;
+  const isRateLimitError =
+    options?.isRateLimitError ??
+    ((error: any) => {
+      const status = error?.status ?? error?.response?.status;
+      return status === 429;
+    });
+
   let attempt = 0;
   let delay = baseDelayMs;
 
@@ -18,11 +29,7 @@ export async function withRateLimitRetry<T>(
     try {
       return await fn();
     } catch (error: any) {
-      const is429 =
-        (error instanceof Webflow.TooManyRequestsError) ||
-        (error?.status === 429);
-
-      if (!is429 || attempt >= maxRetries) {
+      if (!isRateLimitError(error) || attempt >= maxRetries) {
         throw error;
       }
 

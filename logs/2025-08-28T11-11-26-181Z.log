@@ -1,0 +1,33 @@
+[INFO] 2025-08-28T11:11:26.417Z - Environment validated successfully
+[INFO] 2025-08-28T11:11:26.420Z - Starting Webflow CMS image compression pipeline
+[INFO] 2025-08-28T11:11:26.421Z - Starting to fetch all CMS items from collection
+[WARN] 2025-08-28T11:11:28.722Z - Ctrl+C detected - aborting
+[SUCCESS] 2025-08-28T11:11:29.503Z - Ready to process 848 items with image compression
+[INFO] 2025-08-28T11:11:29.506Z - Starting parallel processing with 6 workers
+[INFO] 2025-08-28T11:11:29.505Z - Found 668 items with potential images to process
+[SUCCESS] 2025-08-28T11:11:29.503Z - Successfully fetched 848 total items from collection
+[WARN] 2025-08-28T11:11:29.506Z - Cancellation requested. Worker 1 exiting after 0 items
+[WARN] 2025-08-28T11:11:29.507Z - Cancellation requested. Worker 2 exiting after 0 items
+[WARN] 2025-08-28T11:11:29.507Z - Cancellation requested. Worker 3 exiting after 0 items
+[WARN] 2025-08-28T11:11:29.507Z - Cancellation requested. Worker 4 exiting after 0 items
+[WARN] 2025-08-28T11:11:29.507Z - Cancellation requested. Worker 5 exiting after 0 items
+[WARN] 2025-08-28T11:11:29.507Z - Cancellation requested. Worker 6 exiting after 0 items
+[SUCCESS] 2025-08-28T11:11:29.507Z - === FINAL PROCESSING STATISTICS ===
+[INFO] 2025-08-28T11:11:29.507Z - Item Processing:
+  → {
+  "totalItems": 848,
+  "processedItems": 0,
+  "skippedItems": 0,
+  "successfulCompressions": 0,
+  "failedCompressions": 0,
+  "successRate": "0%"
+}
+[INFO] 2025-08-28T11:11:29.508Z - Size Reduction:
+  → {
+  "originalSize": "0 MB",
+  "compressedSize": "0 MB",
+  "totalSaved": "0 MB",
+  "avgCompressionRatio": "0×",
+  "overallReduction": "0%"
+}
+[SUCCESS] 2025-08-28T11:11:29.508Z - Image compression pipeline completed successfully!

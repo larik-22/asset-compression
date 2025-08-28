@@ -1,0 +1,4 @@
+[INFO] 2025-08-28T11:13:10.590Z - Environment validated successfully
+[INFO] 2025-08-28T11:13:10.593Z - Starting Webflow CMS image compression pipeline
+[INFO] 2025-08-28T11:13:10.593Z - Starting to fetch all CMS items from collection
+[WARN] 2025-08-28T11:13:11.291Z - Cancellation requested by user (q)
