@@ -6,7 +6,7 @@ This service fetches CMS items, downloads their images, compresses them with qua
 
 See the UML diagram for the end-to-end flow:
 
-![Sequence Diagram](docs/sequence.svg)
+![Sequence Diagram](docs/sequence.png)
 
 Notes:
 - Items are processed concurrently with a configurable worker count.
