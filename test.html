@@ -1,0 +1,354 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="aFgJ2KoUdM8jRsIdvM0HkGD0iRZnfgKaWVUhfiDj73c" />
+<script async src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsload@1/cmsload.js"></script>
+<script async src="https://player.vimeo.com/api/player.js"></script>
+<script async src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenLite.min.js"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TimelineMax.min.js"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+<script async src="https://phpstack-418893-4066133.cloudwaysapps.com/Draggable.min.js"></script>
+<script async src="https://phpstack-418893-4066133.cloudwaysapps.com/ScrollSmoother.min.js"></script>
+<script async src="https://phpstack-418893-4066133.cloudwaysapps.com/InertiaPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollToPlugin.min.js"></script>
+<link href="https://vjs.zencdn.net/7.11.8/video-js.css" rel="stylesheet">
+<script src="https://vjs.zencdn.net/7.11.8/video.js"></script>
+
+<style>
+.underline_white *::after, .underline_white::after {
+		background-color: white !important;
+}
+.underline_dark *::after, .underline_dark::after {
+		background-color: var(--dark) !important;
+}
+
+.underline_gold *::after, .underline_gold::after  {
+		background-color: var(--brand-yellow) !important;
+}
+
+.underline_inherit *::after, .underline_inherit::after {
+		background-color: inherit !important;
+}
+
+.before_dark > *:before {
+    background-color: var(--dark) !important;
+}
+
+.before_dark .text-link.hover-underline:before, .reel-link .reel-watch-text:before {
+    background-color: var(--dark) !important;
+}
+
+.before_white > *:before {
+    background-color: white !important;
+}
+
+.before_gold > *:before, .before_gold *:before {
+		background-color: var(--brand-yellow) !important;
+}
+
+
+.reel-link .reel-watch-text:after {
+    background-color: var(--brand-yellow) !important;
+}
+   
+#pop-player-iframe .vjs-play-progress {
+    background-color: var(--brand-yellow) !important;
+}  
+
+.field-identifier:before {
+    background-color: var(--brand-yellow) !important;
+}
+.field-identifier.fs-cmsfilter_active{
+	color: var(--brand-yellow) !important;
+}
+</style>
+
+<script>
+window.addEventListener("load", function () {
+	gsap.registerPlugin(
+		ScrollTrigger,
+		ScrollSmoother,
+		Draggable,
+		InertiaPlugin,
+		ScrollToPlugin,
+	);
+	ScrollTrigger.config({ ignoreMobileResize: true });
+
+	/*let scrolling = false;
+    document.addEventListener("scroll", (event) => {
+      if (scrolling == false) {
+        scrolling = true;
+        setTimeout(function() {
+          ScrollTrigger.refresh();
+          scrolling = false;
+        }, 5000);
+      }
+    });*/
+	/*
+    let refesh_triggers = document?.querySelectorAll('.field-identifier, a, .small-title');
+    refesh_triggers.forEach(function(refesh_trigger) {
+      refesh_trigger.addEventListener('click', function() {
+        setTimeout(function() {
+        	ScrollTrigger.refresh();
+        }, 500);
+      });
+    });*/
+
+	// Check if the site has been visited
+	var siteVisited = localStorage.getItem("siteVisited");
+
+	// If the site has been visited, hide the element
+	if (siteVisited) {
+		var elementToHide = document.getElementById("splash");
+		if (elementToHide) {
+			elementToHide.style.display = "none";
+		}
+	}
+
+	function onFirstVisit() {
+		if (
+			localStorage.getItem("visited") &&
+			!document.body.classList.contains("returning")
+		) {
+			document.body.classList.add("returning");
+		}
+
+		var tl = gsap.timeline();
+		var start = 0;
+		var fade = 3.5;
+		tl.fromTo(
+			"#splash",
+			{ autoAlpha: 0 },
+			{ autoAlpha: 1, duration: 0 },
+			start,
+			"<",
+		);
+
+		tl.fromTo(
+			"#splash #splash-image",
+			{
+				autoAlpha: 0,
+				scaleX: 0.8,
+				scaleY: 0.8,
+				transformOrigin: "50% 50%",
+			},
+			{
+				autoAlpha: 1,
+				scaleX: 1,
+				scaleY: 1,
+				ease: Power4.easeOut,
+				duration: 3.5,
+			},
+			start,
+			"<",
+		);
+
+		tl.fromTo(
+			"#splash",
+			{ autoAlpha: 1 },
+			{ autoAlpha: 0, ease: Power4.easeOut, duration: 1 },
+			fade,
+			"<",
+		);
+		localStorage.setItem("visited", true);
+	}
+
+	onFirstVisit();
+
+	setTimeout(function () {
+		$(".w-slider").unbind("mouseenter mouseleave");
+	});
+
+	const service_locations = document?.getElementById("service-locations");
+	if (service_locations) {
+		const service_locations_us = document?.getElementById(
+			"service-locations-us",
+		);
+		const service_locations_ca = document?.getElementById(
+			"service-locations-ca",
+		);
+		const service_locations_uk = document?.getElementById(
+			"service-locations-uk",
+		);
+
+		if (
+			service_locations_us.classList.contains("w-condition-invisible") &&
+			service_locations_ca.classList.contains("w-condition-invisible") &&
+			service_locations_uk.classList.contains("w-condition-invisible")
+		) {
+			service_locations.classList.add("w-condition-invisible");
+			service_locations.style.display = "none";
+			const bottom_links = document?.getElementById("bottom-links");
+			bottom_links?.classList.remove("service-reel-offset");
+		}
+	}
+
+	var serviceReel = document?.querySelector(
+		".service-reel.w-condition-invisible",
+	);
+
+	if (serviceReel) {
+		var bottomLinks = document?.getElementById("bottom-links");
+		if (bottomLinks?.classList.contains("service-reel-offset")) {
+			bottomLinks.classList.remove("service-reel-offset");
+		}
+	}
+});
+
+function isElementInViewport(element) {
+	var rect = element.getBoundingClientRect();
+	return (
+		rect.top <= window.innerHeight / 2 &&
+		rect.bottom >= window.innerHeight / 2
+	);
+}
+window.onload = function () {
+	var fixedElement = document?.getElementById("loca-filt-box");
+	var stickElement = document?.getElementById("sticky-filters");
+	var initialOffset = fixedElement?.offsetTop;
+
+	var boxElement = document?.getElementById("filter-box");
+	var filterLinks = document?.querySelectorAll(".filter-link");
+
+	var scrollPosition = "";
+
+	function scrollFilters() {
+		if (fixedElement && stickElement && initialOffset) {
+			if (
+				window.innerWidth < 991 &&
+				fixedElement.classList.contains("sales-filter")
+			) {
+				initialOffset = 815;
+
+				if (window.innerWidth < 767) {
+					initialOffset = 550;
+				}
+			}
+
+			if (
+				window.innerWidth < 991 &&
+				fixedElement.classList.contains("locations-page")
+			) {
+				initialOffset = 920;
+
+				if (window.innerWidth < 767) {
+					initialOffset = 640;
+				}
+			}
+
+			if (scrollPosition >= initialOffset) {
+				fixedElement.classList.add("sticky-element");
+				stickElement.appendChild(fixedElement);
+			} else {
+				fixedElement.classList.remove("sticky-element");
+				boxElement.appendChild(fixedElement);
+			}
+		}
+
+		if (stickElement) {
+			filterLinks.forEach(function (link) {
+				var targetId = link.getAttribute("href").substring(1); // Remove the '#' from the href
+				var targetElement = document?.getElementById(targetId);
+
+				if (
+					targetElement &&
+					targetElement.classList.contains("locations-container")
+				) {
+					var isInViewport = isElementInViewport(targetElement);
+
+					if (isInViewport) {
+						targetElement.classList.add("class-to-add");
+					} else {
+						targetElement.classList.remove("class-to-add");
+					}
+				}
+			});
+		}
+	}
+
+	window.onscroll = function () {
+		//scrollPosition = window.pageYOffset + 50;
+		scrollFilters();
+	};
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+	var contentElement = document.getElementById("location-content");
+	var stickyElement = document.getElementById("loca-filt-box-sticky");
+
+	if (contentElement && stickyElement) {
+		window.addEventListener("scroll", function () {
+			var scrollPosition = window.scrollY;
+			var contentBottom =
+				contentElement.offsetTop + contentElement.offsetHeight;
+			var screenHeight = window.innerHeight;
+			var middleScreen = scrollPosition + screenHeight / 2;
+
+			if (middleScreen >= contentBottom) {
+				stickyElement.style.display = "none";
+			} else {
+				stickyElement.style.display = "block";
+			}
+		});
+	}
+});
+
+function filterCMSItemsByFilter(filterValue) {
+	var filterContainingItems = document.querySelectorAll(".filter-containing");
+
+	filterContainingItems.forEach(function (cmsItem) {
+		var showItem = true;
+		var collectionItem = cmsItem.closest(".collection-item-6");
+
+		if (filterValue) {
+			var itemValues = cmsItem.getAttribute("data-genres").toLowerCase();
+
+			// Check if the selected filter matches the values in the CMS item
+			showItem = itemValues.includes(filterValue.toLowerCase());
+
+			if (collectionItem) {
+				if (showItem) {
+					collectionItem.style.display = "block";
+				} else {
+					collectionItem.style.display = "none";
+				}
+			}
+		}
+	});
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	var filterRadios = document.querySelectorAll(".filter-radio");
+	filterRadios.forEach(function (radio) {
+		radio.addEventListener("change", function () {
+			var filterRadios2 = document.querySelectorAll(".filter-radio");
+			filterRadios2.forEach(function (radio2) {
+				radio2.parentElement.classList.remove("fs-cmsfilter_active");
+			});
+			radio.parentElement.classList.add("fs-cmsfilter_active");
+			var selectedFilter = document.querySelector(
+				".filter-radio:checked",
+			);
+			var filterValue = selectedFilter
+				? selectedFilter.getAttribute("data-filter-value")
+				: null;
+			filterCMSItemsByFilter(filterValue);
+			handleEmptyClass();
+		});
+	});
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+	var ca_loc = [".person-title", ".artist-top-location"];
+	for (var i = 0; i < ca_loc.length; i++) {
+		var ca_ref = document?.querySelectorAll(ca_loc[i]);
+		if (ca_ref) {
+			ca_ref.forEach(function (ca) {
+				if (ca.textContent == "CA") {
+					ca.textContent = "Canada";
+				}
+			});
+		}
+	}
+});
+</script>
