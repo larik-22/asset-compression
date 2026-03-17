@@ -8,6 +8,7 @@
     "dev": "tsx watch src/index.ts",
     "test": "tsx src/test.ts",
     "playground": "tsx src/playground.ts",
+    "one-time-unpublish-related": "tsx src/scripts/oneTimeUnpublishRelated.ts",
     "build": "tsc -p tsconfig.json",
     "start": "node dist/index.js",
     "analyze-log": "tsx src/scripts/analyzeLog.ts"
